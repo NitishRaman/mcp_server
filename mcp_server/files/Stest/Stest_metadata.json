@@ -1,0 +1,44 @@
+{
+  "enrollment": {
+    "primary_keys": [
+      "enrollment_id"
+    ],
+    "foreign_keys": [
+      "class_id \u2192 class.class_id",
+      "student_id \u2192 student.student_id"
+    ],
+    "source": "supabase"
+  },
+  "marks": {
+    "primary_keys": [
+      "mark_id"
+    ],
+    "foreign_keys": [
+      "enrollment_id \u2192 enrollment.enrollment_id"
+    ],
+    "source": "supabase"
+  },
+  "student": {
+    "primary_keys": [
+      "student_id"
+    ],
+    "foreign_keys": [],
+    "source": "supabase"
+  },
+  "teacher": {
+    "primary_keys": [
+      "teacher_id"
+    ],
+    "foreign_keys": [],
+    "source": "supabase"
+  },
+  "class": {
+    "primary_keys": [
+      "class_id"
+    ],
+    "foreign_keys": [
+      "teacher_id \u2192 teacher.teacher_id"
+    ],
+    "source": "supabase"
+  }
+}

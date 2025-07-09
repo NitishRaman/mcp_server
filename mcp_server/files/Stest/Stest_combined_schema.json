@@ -1,0 +1,132 @@
+{
+  "enrollment": [
+    {
+      "column_name": "enrollment_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "student_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "class_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "enrolled_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "active",
+      "data_type": "boolean"
+    }
+  ],
+  "marks": [
+    {
+      "column_name": "mark_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "enrollment_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "score",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "max_score",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "graded_at",
+      "data_type": "timestamp with time zone"
+    }
+  ],
+  "student": [
+    {
+      "column_name": "student_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "dob",
+      "data_type": "date"
+    },
+    {
+      "column_name": "enrolled_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "active",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "section",
+      "data_type": "text"
+    },
+    {
+      "column_name": "first_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "last_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "email",
+      "data_type": "text"
+    }
+  ],
+  "teacher": [
+    {
+      "column_name": "teacher_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "hire_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "active",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "first_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "last_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "email",
+      "data_type": "text"
+    }
+  ],
+  "class": [
+    {
+      "column_name": "class_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "teacher_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "code",
+      "data_type": "text"
+    },
+    {
+      "column_name": "name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "enrollment": "Here is the information you requested:\n\nKeywords:\n1. Enrollment\n2. Student\n3. Course\n4. Program\n5. Education\n\nRelationships:\n- enrollment_id \u2192 student.student_id (Foreign Key)\n- class_id \u2192 class.class_id (Foreign Key)\n\nBusiness Purpose:\nStudent and course enrollment tracking.",
+  "marks": "Here is the information you requested:\n\nKeywords:\n1. Grades\n2. Enrollment\n3. Assessment\n4. Education\n\nRelationships:\n- mark_id \u2192 marks (primary key)\n- enrollment_id \u2192 enrollment.enrollment_id (foreign key)\n\nBusiness Purpose:\nStudent grade tracking and assessment management.",
+  "student": "Here are my responses:\n\n1. Keywords: Student, Education, Enrollment\n2. No relevant relationships mentioned (Foreign Keys).\n3. Business Purpose: Tracking student information for academic purposes.",
+  "teacher": "1. Teacher, Employee, Education\n2. None (No foreign key constraints)\n3. The teacher table stores information about individual teachers employed at an institution, including their identification, employment history, account status, and contact details.",
+  "class": "Here is the response:\n\nKeywords:\nclass, education, teacher, date, description\n\nRelationships:\n- class_id \u2192 itself (primary key), \n- teacher_id \u2192 teacher.teacher_id (foreign key)\n\nBusiness Purpose:\nTrack and manage classes within an educational system."
+}

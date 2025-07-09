@@ -1,0 +1,36 @@
+{
+  "enrollment": {
+    "primary_keys": [],
+    "foreign_keys": []
+  },
+  "marks": {
+    "primary_keys": [
+      "mark_id",
+      "enrollment_id"
+    ],
+    "foreign_keys": [
+      "enrollment_id => enrollments"
+    ]
+  },
+  "student": {
+    "primary_keys": [
+      "student_id"
+    ],
+    "foreign_keys": []
+  },
+  "teacher": {
+    "primary_keys": [
+      "teacher_id"
+    ],
+    "foreign_keys": []
+  },
+  "class": {
+    "primary_keys": [
+      "class_id"
+    ],
+    "foreign_keys": [
+      "teacher_id => teacher",
+      "class_id => class"
+    ]
+  }
+}

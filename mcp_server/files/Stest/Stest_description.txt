@@ -1,0 +1,116 @@
+### Table 1/5: enrollment
+**Summary:** This `enrollment` table appears to store information about students' participation in classes. Each row represents a student's enrollment in a specific class, including the date they started and whether their enrollment is currently active or not.
+
+## Columns:
+- **enrollment_id** *(type: integer)*
+    ↪ This column appears to uniquely identify each individual's or organization's record of enrollment in a program, course, or initiative, and is likely used as a primary key to link related data together.
+- **student_id** *(type: integer)*
+    ↪ This column likely represents a unique identifier assigned to each student enrolled in the institution, allowing for efficient tracking and management of their records.
+- **class_id** *(type: integer)*
+    ↪ This column appears to represent a unique identifier or code that corresponds to a particular class or course, allowing for easy tracking and organization of student enrollments within that class. The fact that it's an integer suggests that this identifier is likely a numerical value, such as a course number or sequence ID.
+- **enrolled_at** *(type: timestamp with time zone)*
+    ↪ This column likely captures the date and time when students officially started or were accepted into a program, course, or institution, signifying their formal enrollment. The inclusion of "time zone" suggests that this timestamp is sensitive to daylight saving time and other regional variations in clock times.
+- **active** *(type: boolean)*
+    ↪ This column likely indicates whether an individual's enrollment status is currently active or inactive, with a value of "true" indicating that the person is actively enrolled and "false" suggesting they are not. This information might be used to track student or member participation in a program, membership, or subscription-based service.
+
+### Table 2/5: marks
+**Summary:** This table, `marks`, appears to contain information about the grades or scores given to students in a course or program. Each row represents an individual student's score on a particular assessment, with columns storing details such as the ID of the enrollment, the actual score achieved, the maximum possible score, and when the grade was recorded.
+
+## Columns:
+- **mark_id** *(type: integer)*
+    ↪ This column likely represents unique identifiers or codes assigned to individual student grades, scores, or evaluations within a marks table. It's an integer field, suggesting that these IDs are numerical and can be used as keys for referencing specific mark records in the database.
+- **enrollment_id** *(type: integer)*
+    ↪ This column likely represents a unique identifier assigned to each student or learner that is enrolled in a course, program, or educational institution. The presence of integers as sample values suggests that it's a numerical key used to track individual enrollments and may be used to link enrollment data to other relevant information.
+- **score** *(type: integer)*
+    ↪ This column appears to represent a numerical value that measures the achievement or performance of an individual or entity, such as a student's grade or a team's points scored in a competition. The fact that it has an integer data type suggests that this value is likely discrete and quantifiable, rather than a descriptive or categorical measurement.
+- **max_score** *(type: integer)*
+    ↪ This column appears to represent the maximum possible score that can be achieved on a test or assessment, which is then used as a benchmark to measure student performance and calculate grades. The fact that it's an integer type suggests that the scores are numerical values, rather than ratings or percentages.
+- **graded_at** *(type: timestamp with time zone)*
+    ↪ This column likely captures the exact moment when students' assignments or assessments were evaluated and a grade was assigned, providing a record of when each piece of work was thoroughly reviewed and feedback was provided. The inclusion of timezone information suggests that this timestamp is meant to be used in conjunction with other time-related calculations or queries, possibly involving multiple locations or users across different regions.
+
+### Table 3/5: student
+**Summary:** This table appears to contain information about individual students in a educational institution or program. Each row represents a single student, with columns providing details such as their identification number, birthdate, enrollment date, and current status (active or inactive).
+
+## Columns:
+- **student_id** *(type: integer)*
+    ↪ This column likely represents a unique identifier for each individual student, allowing for distinct records to be tracked and referenced within the table. It's probable that this ID is used to link various student-related information and data points, such as academic performance, contact details, or demographic characteristics.
+- **dob** *(type: date)*
+    ↪ This column appears to store the birthdate or age of each student, which could be used to calculate their current age or determine their eligibility for certain programs or activities based on their age at a particular point in time. The fact that it's a date type suggests that the exact date of birth is being recorded, rather than just the student's age.
+- **enrolled_at** *(type: timestamp with time zone)*
+    ↪ This column likely records when each student started their enrollment at an institution, such as a university or college, and includes information about the date and time of that event, taking into account the student's timezone. This would provide a clear chronological record of students' entry points into academic programs.
+- **active** *(type: boolean)*
+    ↪ This column likely indicates whether each student's account or enrollment status is currently active or inactive, allowing for tracking of students who are currently participating in a program or service versus those who have dropped out or are on leave.
+- **section** *(type: text)*
+    ↪ This column likely represents the unique identifier or subgrouping of students, possibly indicating their academic or social affiliations within a particular educational setting, such as a class, club, or program. It may be used to track student assignments, attendance, or other related data that is specific to each group.
+- **first_name** *(type: text)*
+    ↪ This column appears to hold the personal names of students, specifically their given or first names. It's likely used to identify each individual student uniquely and provide a human-readable label for subsequent interactions with that person.
+- **last_name** *(type: text)*
+    ↪ This column appears to store the surname or family name of students, which is a common demographic characteristic used to identify and categorize individuals. The fact that it's a text type suggests that the values are alphanumeric strings, such as "Smith", "Johnson", or "Lee".
+- **email** *(type: text)*
+    ↪ This column likely holds individual contact information, specifically the unique online identifier for each student that can be used to communicate with them or verify their identity. It is a text-based field that accommodates various email address formats and allows for easy storage and retrieval of this important data.
+
+### Table 4/5: teacher
+**Summary:** This table, `teacher`, stores information about individual teachers, including their unique ID, date of hire, current employment status, name details, and contact email address. It's likely used to manage teacher records and track important data such as hiring dates and active/inactive status.
+
+## Columns:
+- **teacher_id** *(type: integer)*
+    ↪ This column likely represents a unique identifier assigned to each individual teacher, used to track and manage information about them within the system. It's probably used as a primary key or foreign key in other tables to establish relationships between teachers and their associated data.
+- **hire_date** *(type: date)*
+    ↪ This column likely stores the dates when teachers were formally employed or started working at an institution, indicating their tenure and employment history. It may also be used to track important milestones such as probationary periods, promotions, or significant career changes.
+- **active** *(type: boolean)*
+    ↪ This column likely indicates whether a teacher's account is currently enabled or disabled, with true values representing active teachers and false values indicating inactive ones. This information might be used to filter or query the teacher data, such as identifying which teachers are available for assignment or which ones need to be reactivated.
+- **first_name** *(type: text)*
+    ↪ This column is likely intended to store the initial given name of each teacher, such as John or Emily, and will contain strings that represent a person's first name. The absence of sample values suggests that this table may be used for storing information about individual teachers, rather than being populated with actual data at this point.
+- **last_name** *(type: text)*
+    ↪ This column likely stores the family names or surnames of teachers, providing a way to uniquely identify each individual instructor in the database. The "text" data type suggests that the values can be variable-length strings, allowing for a wide range of possible last names from different cultures and languages.
+- **email** *(type: text)*
+    ↪ This column likely stores unique identifiers or contact information related to individual teachers, such as their professional email addresses, allowing for communication and correspondence with them. The absence of sample values suggests that this data is either not publicly available or intentionally blanked out for privacy reasons.
+
+### Table 5/5: class
+**Summary:** This `class` table likely contains information about educational classes or sessions, such as the teacher assigned to each class, the date and time it was created, and details about the class itself (code, name, and description). Think of it like a catalog of all the classes being offered.
+
+## Columns:
+- **class_id** *(type: integer)*
+    ↪ This column appears to represent a unique identifier or code for each individual class, allowing for easy tracking and organization of classes within the system. It's likely used as a primary key to link to other related data in the table.
+- **teacher_id** *(type: integer)*
+    ↪ This column likely represents the unique identifier of the educator responsible for teaching or instructing a particular class, with each value representing an individual teacher's ID number. This information could be used to track which teachers are assigned to which classes and facilitate management of student-teacher relationships.
+- **created_at** *(type: timestamp with time zone)*
+    ↪ This column likely represents the date and time when each class was created or established, potentially serving as a record of the moment when the class's existence began. It may be used to track the order or sequence in which classes were created, allowing for easier management or analysis of the data.
+- **code** *(type: text)*
+    ↪ This column appears to represent a unique identifier or designation for each class, possibly used to distinguish between different courses or groupings of students. It may be used to categorize and organize data related to classes, making it easier to track and analyze information about individual classes.
+- **name** *(type: text)*
+    ↪ This column appears to store unique identifiers or labels for distinct categories or groups within the "class" table, potentially representing course names, student names, or other classification labels.
+- **description** *(type: text)*
+    ↪ This column likely stores human-readable information or a narrative that provides context about each class, possibly including details on its purpose, goals, or key characteristics. The fact that it's of type "text" suggests it may contain free-form text, such as paragraphs or sentences, rather than structured data like codes or abbreviations.
+
+
+# 🔑 Final Inferred Keys (PRAGMA + Fallback)
+
+## enrollment
+Primary Keys: enrollment_id
+
+Foreign Keys:
+- class_id → class.class_id
+- student_id → student.student_id
+
+## marks
+Primary Keys: mark_id
+
+Foreign Keys:
+- enrollment_id → enrollment.enrollment_id
+
+## student
+Primary Keys: student_id
+
+Foreign Keys:
+
+## teacher
+Primary Keys: teacher_id
+
+Foreign Keys:
+
+## class
+Primary Keys: class_id
+
+Foreign Keys:
+- teacher_id → teacher.teacher_id

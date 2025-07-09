@@ -1,0 +1,39 @@
+[class]
+    *class_id {label:"INTEGER"}
+    code {label:"TEXT"}
+    created_at {label:"NUMERIC"}
+    description {label:"TEXT"}
+    name {label:"TEXT"}
+    teacher_id {label:"INTEGER"}
+[teacher]
+    *teacher_id {label:"INTEGER"}
+    active {label:"BOOLEAN"}
+    email {label:"TEXT"}
+    first_name {label:"TEXT"}
+    hire_date {label:"DATE"}
+    last_name {label:"TEXT"}
+[enrollment]
+    *enrollment_id {label:"INTEGER"}
+    active {label:"BOOLEAN"}
+    class_id {label:"INTEGER"}
+    enrolled_at {label:"NUMERIC"}
+    student_id {label:"INTEGER"}
+[student]
+    *student_id {label:"INTEGER"}
+    active {label:"BOOLEAN"}
+    dob {label:"DATE"}
+    email {label:"TEXT"}
+    enrolled_at {label:"NUMERIC"}
+    first_name {label:"TEXT"}
+    last_name {label:"TEXT"}
+    section {label:"TEXT"}
+[marks]
+    *mark_id {label:"INTEGER"}
+    enrollment_id {label:"INTEGER"}
+    graded_at {label:"NUMERIC"}
+    max_score {label:"INTEGER"}
+    score {label:"INTEGER"}
+teacher."teacher_id" ?--* class."teacher_id"
+student."student_id" ?--* enrollment."student_id"
+class."class_id" ?--* enrollment."class_id"
+enrollment."enrollment_id" ?--* marks."enrollment_id"

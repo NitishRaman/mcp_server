@@ -1,0 +1,784 @@
+{
+  "Album": {
+    "AlbumId": {
+      "type": "identifier",
+      "count": 347,
+      "mean": 174.0,
+      "median": 174.0,
+      "std": 100.31450543166726,
+      "min": 1.0,
+      "max": 347.0
+    },
+    "Title": {
+      "type": "categorical",
+      "unique": 347,
+      "top_values": [
+        [
+          "Koyaanisqatsi (Soundtrack from the Motion Picture)",
+          0.29
+        ],
+        [
+          "For Those About To Rock We Salute You",
+          0.29
+        ],
+        [
+          "Balls to the Wall",
+          0.29
+        ]
+      ],
+      "avg_len": 22.69164265129683
+    },
+    "ArtistId": {
+      "type": "numeric",
+      "count": 347,
+      "mean": 121.94236311239193,
+      "median": 112.0,
+      "std": 77.79313102621585,
+      "min": 1.0,
+      "max": 275.0
+    }
+  },
+  "Artist": {
+    "ArtistId": {
+      "type": "identifier",
+      "count": 275,
+      "mean": 138.0,
+      "median": 138.0,
+      "std": 79.52986860293433,
+      "min": 1.0,
+      "max": 275.0
+    },
+    "Name": {
+      "type": "categorical",
+      "unique": 275,
+      "top_values": [
+        [
+          "Philip Glass Ensemble",
+          0.36
+        ],
+        [
+          "AC/DC",
+          0.36
+        ],
+        [
+          "Accept",
+          0.36
+        ]
+      ],
+      "avg_len": 20.574545454545454
+    }
+  },
+  "Customer": {
+    "CustomerId": {
+      "type": "identifier",
+      "count": 59,
+      "mean": 30.0,
+      "median": 30.0,
+      "std": 17.175564037317667,
+      "min": 1.0,
+      "max": 59.0
+    },
+    "FirstName": {
+      "type": "categorical",
+      "unique": 57,
+      "top_values": [
+        [
+          "Frank",
+          3.39
+        ],
+        [
+          "Mark",
+          3.39
+        ],
+        [
+          "Fran\u00e7ois",
+          1.69
+        ]
+      ],
+      "avg_len": 5.762711864406779
+    },
+    "LastName": {
+      "type": "categorical",
+      "unique": 59,
+      "top_values": [
+        [
+          "Gon\u00e7alves",
+          1.69
+        ],
+        [
+          "K\u00f6hler",
+          1.69
+        ],
+        [
+          "Tremblay",
+          1.69
+        ]
+      ],
+      "avg_len": 6.932203389830509
+    },
+    "Company": {
+      "type": "unknown"
+    },
+    "Address": {
+      "type": "categorical",
+      "unique": 59,
+      "top_values": [
+        [
+          "Av. Brigadeiro Faria Lima, 2170",
+          1.69
+        ],
+        [
+          "Theodor-Heuss-Stra\u00dfe 34",
+          1.69
+        ],
+        [
+          "1498 rue B\u00e9langer",
+          1.69
+        ]
+      ],
+      "avg_len": 17.88135593220339
+    },
+    "City": {
+      "type": "categorical",
+      "unique": 53,
+      "top_values": [
+        [
+          "Prague",
+          3.39
+        ],
+        [
+          "Mountain View",
+          3.39
+        ],
+        [
+          "S\u00e3o Paulo",
+          3.39
+        ]
+      ],
+      "avg_len": 7.796610169491525
+    },
+    "State": {
+      "type": "unknown"
+    },
+    "Country": {
+      "type": "categorical",
+      "unique": 24,
+      "top_values": [
+        [
+          "USA",
+          22.03
+        ],
+        [
+          "Canada",
+          13.56
+        ],
+        [
+          "France",
+          8.47
+        ]
+      ],
+      "avg_len": 6.3559322033898304
+    },
+    "PostalCode": {
+      "type": "unknown"
+    },
+    "Phone": {
+      "type": "unknown"
+    },
+    "Fax": {
+      "type": "unknown"
+    },
+    "Email": {
+      "type": "categorical",
+      "unique": 59,
+      "top_values": [
+        [
+          "luisg@embraer.com.br",
+          1.69
+        ],
+        [
+          "leonekohler@surfeu.de",
+          1.69
+        ],
+        [
+          "ftremblay@gmail.com",
+          1.69
+        ]
+      ],
+      "avg_len": 21.016949152542374
+    },
+    "SupportRepId": {
+      "type": "numeric",
+      "count": 59,
+      "mean": 3.9491525423728815,
+      "median": 4.0,
+      "std": 0.8184031721539823,
+      "min": 3.0,
+      "max": 5.0
+    }
+  },
+  "Employee": {
+    "EmployeeId": {
+      "type": "identifier",
+      "count": 8,
+      "mean": 4.5,
+      "median": 4.5,
+      "std": 2.449489742783178,
+      "min": 1.0,
+      "max": 8.0
+    },
+    "LastName": {
+      "type": "categorical",
+      "unique": 8,
+      "top_values": [
+        [
+          "Adams",
+          12.5
+        ],
+        [
+          "Edwards",
+          12.5
+        ],
+        [
+          "Peacock",
+          12.5
+        ]
+      ],
+      "avg_len": 6.25
+    },
+    "FirstName": {
+      "type": "categorical",
+      "unique": 8,
+      "top_values": [
+        [
+          "Andrew",
+          12.5
+        ],
+        [
+          "Nancy",
+          12.5
+        ],
+        [
+          "Jane",
+          12.5
+        ]
+      ],
+      "avg_len": 5.75
+    },
+    "Title": {
+      "type": "categorical",
+      "unique": 5,
+      "top_values": [
+        [
+          "Sales Support Agent",
+          37.5
+        ],
+        [
+          "IT Staff",
+          25.0
+        ],
+        [
+          "General Manager",
+          12.5
+        ]
+      ],
+      "avg_len": 13.875
+    },
+    "ReportsTo": {
+      "type": "numeric",
+      "count": 7,
+      "mean": 2.857142857142857,
+      "median": 2.0,
+      "std": 2.193062655175134,
+      "min": 1.0,
+      "max": 6.0
+    },
+    "BirthDate": {
+      "type": "datetime",
+      "min_date": "1947-09-19 00:00:00",
+      "max_date": "1973-08-29 00:00:00"
+    },
+    "HireDate": {
+      "type": "datetime",
+      "min_date": "2002-04-01 00:00:00",
+      "max_date": "2004-03-04 00:00:00"
+    },
+    "Address": {
+      "type": "categorical",
+      "unique": 8,
+      "top_values": [
+        [
+          "11120 Jasper Ave NW",
+          12.5
+        ],
+        [
+          "825 8 Ave SW",
+          12.5
+        ],
+        [
+          "1111 6 Ave SW",
+          12.5
+        ]
+      ],
+      "avg_len": 16.25
+    },
+    "City": {
+      "type": "categorical",
+      "unique": 3,
+      "top_values": [
+        [
+          "Calgary",
+          62.5
+        ],
+        [
+          "Lethbridge",
+          25.0
+        ],
+        [
+          "Edmonton",
+          12.5
+        ]
+      ],
+      "avg_len": 7.875
+    },
+    "State": {
+      "type": "categorical",
+      "unique": 1,
+      "top_values": [
+        [
+          "AB",
+          100.0
+        ]
+      ],
+      "avg_len": 2.0
+    },
+    "Country": {
+      "type": "categorical",
+      "unique": 1,
+      "top_values": [
+        [
+          "Canada",
+          100.0
+        ]
+      ],
+      "avg_len": 6.0
+    },
+    "PostalCode": {
+      "type": "categorical",
+      "unique": 8,
+      "top_values": [
+        [
+          "T5K 2N1",
+          12.5
+        ],
+        [
+          "T2P 2T3",
+          12.5
+        ],
+        [
+          "T2P 5M5",
+          12.5
+        ]
+      ],
+      "avg_len": 7.0
+    },
+    "Phone": {
+      "type": "categorical",
+      "unique": 7,
+      "top_values": [
+        [
+          "+1 (403) 262-3443",
+          25.0
+        ],
+        [
+          "+1 (780) 428-9482",
+          12.5
+        ],
+        [
+          "+1 (403) 263-4423",
+          12.5
+        ]
+      ],
+      "avg_len": 16.875
+    },
+    "Fax": {
+      "type": "categorical",
+      "unique": 8,
+      "top_values": [
+        [
+          "+1 (780) 428-3457",
+          12.5
+        ],
+        [
+          "+1 (403) 262-3322",
+          12.5
+        ],
+        [
+          "+1 (403) 262-6712",
+          12.5
+        ]
+      ],
+      "avg_len": 16.875
+    },
+    "Email": {
+      "type": "categorical",
+      "unique": 8,
+      "top_values": [
+        [
+          "andrew@chinookcorp.com",
+          12.5
+        ],
+        [
+          "nancy@chinookcorp.com",
+          12.5
+        ],
+        [
+          "jane@chinookcorp.com",
+          12.5
+        ]
+      ],
+      "avg_len": 21.75
+    }
+  },
+  "Genre": {
+    "GenreId": {
+      "type": "identifier",
+      "count": 25,
+      "mean": 13.0,
+      "median": 13.0,
+      "std": 7.359800721939872,
+      "min": 1.0,
+      "max": 25.0
+    },
+    "Name": {
+      "type": "categorical",
+      "unique": 25,
+      "top_values": [
+        [
+          "Rock",
+          4.0
+        ],
+        [
+          "Jazz",
+          4.0
+        ],
+        [
+          "Metal",
+          4.0
+        ]
+      ],
+      "avg_len": 8.96
+    }
+  },
+  "Invoice": {
+    "InvoiceId": {
+      "type": "identifier",
+      "count": 412,
+      "mean": 206.5,
+      "median": 206.5,
+      "std": 119.07840554301467,
+      "min": 1.0,
+      "max": 412.0
+    },
+    "CustomerId": {
+      "type": "numeric",
+      "count": 412,
+      "mean": 29.929611650485437,
+      "median": 30.0,
+      "std": 17.010584849707833,
+      "min": 1.0,
+      "max": 59.0
+    },
+    "InvoiceDate": {
+      "type": "datetime",
+      "min_date": "2009-01-01 00:00:00",
+      "max_date": "2013-12-22 00:00:00"
+    },
+    "BillingAddress": {
+      "type": "categorical",
+      "unique": 59,
+      "top_values": [
+        [
+          "Theodor-Heuss-Stra\u00dfe 34",
+          1.7
+        ],
+        [
+          "Ullev\u00e5lsveien 14",
+          1.7
+        ],
+        [
+          "Gr\u00e9trystraat 63",
+          1.7
+        ]
+      ],
+      "avg_len": 17.883495145631066
+    },
+    "BillingCity": {
+      "type": "categorical",
+      "unique": 53,
+      "top_values": [
+        [
+          "Berlin",
+          3.4
+        ],
+        [
+          "London",
+          3.4
+        ],
+        [
+          "Mountain View",
+          3.4
+        ]
+      ],
+      "avg_len": 7.793689320388349
+    },
+    "BillingState": {
+      "type": "unknown"
+    },
+    "BillingCountry": {
+      "type": "categorical",
+      "unique": 24,
+      "top_values": [
+        [
+          "USA",
+          22.09
+        ],
+        [
+          "Canada",
+          13.59
+        ],
+        [
+          "France",
+          8.5
+        ]
+      ],
+      "avg_len": 6.359223300970874
+    },
+    "BillingPostalCode": {
+      "type": "unknown"
+    },
+    "Total": {
+      "type": "numeric",
+      "count": 412,
+      "mean": 5.651941747572814,
+      "median": 3.96,
+      "std": 4.745319693568107,
+      "min": 0.99,
+      "max": 25.86
+    }
+  },
+  "InvoiceLine": {
+    "InvoiceLineId": {
+      "type": "identifier",
+      "count": 1000,
+      "mean": 500.5,
+      "median": 500.5,
+      "std": 288.8194360957494,
+      "min": 1.0,
+      "max": 1000.0
+    },
+    "InvoiceId": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 92.666,
+      "median": 93.5,
+      "std": 53.198162454059336,
+      "min": 1.0,
+      "max": 185.0
+    },
+    "TrackId": {
+      "type": "identifier",
+      "count": 1000,
+      "mean": 1555.456,
+      "median": 1520.0,
+      "std": 940.703797003976,
+      "min": 1.0,
+      "max": 3500.0
+    },
+    "UnitPrice": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 1.021,
+      "median": 0.99,
+      "std": 0.17340435135563662,
+      "min": 0.99,
+      "max": 1.99
+    },
+    "Quantity": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  },
+  "MediaType": {
+    "MediaTypeId": {
+      "type": "identifier",
+      "count": 5,
+      "mean": 3.0,
+      "median": 3.0,
+      "std": 1.5811388300841898,
+      "min": 1.0,
+      "max": 5.0
+    },
+    "Name": {
+      "type": "categorical",
+      "unique": 5,
+      "top_values": [
+        [
+          "MPEG audio file",
+          20.0
+        ],
+        [
+          "Protected AAC audio file",
+          20.0
+        ],
+        [
+          "Protected MPEG-4 video file",
+          20.0
+        ]
+      ],
+      "avg_len": 20.8
+    }
+  },
+  "Playlist": {
+    "PlaylistId": {
+      "type": "identifier",
+      "count": 18,
+      "mean": 9.5,
+      "median": 9.5,
+      "std": 5.338539126015656,
+      "min": 1.0,
+      "max": 18.0
+    },
+    "Name": {
+      "type": "categorical",
+      "unique": 14,
+      "top_values": [
+        [
+          "Music",
+          11.11
+        ],
+        [
+          "Movies",
+          11.11
+        ],
+        [
+          "TV Shows",
+          11.11
+        ]
+      ],
+      "avg_len": 12.055555555555555
+    }
+  },
+  "PlaylistTrack": {
+    "PlaylistId": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "TrackId": {
+      "type": "identifier",
+      "count": 1000,
+      "mean": 1578.273,
+      "median": 1136.5,
+      "std": 1131.4506268467892,
+      "min": 63.0,
+      "max": 3502.0
+    }
+  },
+  "Track": {
+    "TrackId": {
+      "type": "identifier",
+      "count": 1000,
+      "mean": 500.5,
+      "median": 500.5,
+      "std": 288.8194360957494,
+      "min": 1.0,
+      "max": 1000.0
+    },
+    "Name": {
+      "type": "categorical",
+      "unique": 972,
+      "top_values": [
+        [
+          "Smoke On The Water",
+          0.3
+        ],
+        [
+          "She",
+          0.2
+        ],
+        [
+          "Firmamento",
+          0.2
+        ]
+      ],
+      "avg_len": 15.134
+    },
+    "AlbumId": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 40.908,
+      "median": 39.0,
+      "std": 21.833878589344913,
+      "min": 1.0,
+      "max": 80.0
+    },
+    "MediaTypeId": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 1.004,
+      "median": 1.0,
+      "std": 0.06315051850925683,
+      "min": 1.0,
+      "max": 2.0
+    },
+    "GenreId": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 4.039,
+      "median": 4.0,
+      "std": 2.87153699692773,
+      "min": 1.0,
+      "max": 11.0
+    },
+    "Composer": {
+      "type": "unknown"
+    },
+    "Milliseconds": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 263260.586,
+      "median": 248411.0,
+      "std": 109578.36789717947,
+      "min": 4884.0,
+      "max": 1196094.0
+    },
+    "Bytes": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 8579645.091,
+      "median": 8133672.0,
+      "std": 3631065.4355457732,
+      "min": 161266.0,
+      "max": 39267613.0
+    },
+    "UnitPrice": {
+      "type": "numeric",
+      "count": 1000,
+      "mean": 0.9900000000000001,
+      "median": 0.99,
+      "std": 1.110778552818352e-16,
+      "min": 0.99,
+      "max": 0.99
+    }
+  }
+}

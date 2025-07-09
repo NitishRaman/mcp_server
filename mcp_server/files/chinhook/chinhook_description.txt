@@ -1,0 +1,273 @@
+
+
+### Table 1/11: Album
+**Summary:** Here's a summary of the `Album` table: This table stores information about individual albums released by various artists. Each row represents an album, with columns capturing its unique ID, title, and association with a specific artist.
+
+## Columns:
+- **AlbumId** *(identifier)*: Unique ID ranging from 1.0 to 347.0.
+    ↪ This column likely represents a unique identifier for each album in a database, serving as a primary key to distinguish one album from another. Its integer type suggests that it may be used as a primary key or foreign key to establish relationships with other tables, such as artist or track information.
+- **Title** *(categorical/text)*: 347 unique values. Top values: **Koyaanisqatsi (Soundtrack from the Motion Picture)** (0.29%), **For Those About To Rock We Salute You** (0.29%), **Balls to the Wall** (0.29%).
+    ↪ This column appears to hold the names of famous rock music albums, likely from a popular band or artist. The album titles are characterized by their bold and memorable names, suggesting they may be considered iconic or influential in the world of heavy metal or hard rock music.
+- **ArtistId** *(numeric)*: Ranges from 1.0 to 275.0, mean=121.94, median=112.00, std=77.79.
+    ↪ This column is likely a foreign key that references a unique identifier for each artist in the database, allowing you to link album records to their respective creators. It's probably used to establish relationships between albums and the artists who produced them.
+
+
+
+### Table 2/11: Artist
+**Summary:** The `Artist` table stores information about individual artists, specifically their unique identifier and name. This allows for tracking and organization of artist data for analysis or reporting purposes.
+
+## Columns:
+- **ArtistId** *(identifier)*: Unique ID ranging from 1.0 to 275.0.
+    ↪ This column is a unique identifier for each artist, serving as a primary key to distinguish one artist from another within the database. It likely represents a numerical code or sequence number assigned to each individual artist, allowing for efficient querying and data retrieval.
+- **Name** *(categorical/text)*: 275 unique values. Top values: **Philip Glass Ensemble** (0.36%), **AC/DC** (0.36%), **Accept** (0.36%).
+    ↪ This column appears to contain the names of famous musicians, likely rock bands or solo artists, used to identify their unique identities within a database of music-related information. The data includes both well-known and lesser-known names from various genres and eras.
+
+
+
+### Table 3/11: Customer
+**Summary:** This `Customer` table stores information about individual customers, including their personal details, company affiliation (if any), and contact information. It also tracks which support representative is assigned to each customer, facilitating communication and issue resolution.
+
+## Columns:
+- **CustomerId** *(identifier)*: Unique ID ranging from 1.0 to 59.0.
+    ↪ This column is used to uniquely identify each customer record in the table, serving as a primary key or unique identifier. It likely represents the individual's personal or account number that distinguishes them from other customers.
+- **FirstName** *(categorical/text)*: 57 unique values. Top values: **Frank** (3.39%), **Mark** (3.39%), **François** (1.69%).
+    ↪ This column likely stores the given names or first names of individual customers, which are typically used to identify and address them personally. The diverse set of sample values suggests that the column accommodates a range of cultural and linguistic variations in naming conventions, reflecting the global nature of the customer base.
+- **LastName** *(categorical/text)*: 59 unique values. Top values: **Gonçalves** (1.69%), **Köhler** (1.69%), **Tremblay** (1.69%).
+    ↪ This column appears to hold the last names of customers, providing a way to identify and organize individuals based on their surname. The presence of non-English characters (e.g., accents) suggests that the table may be designed to accommodate customers from diverse linguistic backgrounds.
+- **Company** *(unknown type)*
+    ↪ This column appears to contain the names of businesses or organizations that are customers of a particular company, probably representing companies or entities that purchase products or services from the organization. The varying formats and languages of the sample values suggest that these might be international companies with diverse names.
+- **Address** *(categorical/text)*: 59 unique values. Top values: **Av. Brigadeiro Faria Lima, 2170** (1.69%), **Theodor-Heuss-Straße 34** (1.69%), **1498 rue Bélanger** (1.69%).
+    ↪ This column appears to represent the physical location or mailing address of customers, typically including a street name, number, and possibly additional details like zip codes or apt numbers. The varied formats and languages suggest that this column may be storing addresses from different countries or regions.
+- **City** *(categorical/text)*: 53 unique values. Top values: **Prague** (3.39%), **Mountain View** (3.39%), **São Paulo** (3.39%).
+    ↪ This column appears to represent the geographical location where a customer is based, indicating their city of residence or primary business address. The varied sample values suggest that customers are located all over the world, with cities from different countries and regions represented in the data.
+- **State** *(unknown type)*
+    ↪ This column appears to represent a two-letter code that indicates the province or state where each customer is located, with values such as "SP" suggesting the province of Saskatchewan and "RJ" likely representing the Brazilian state of Rio de Janeiro.
+- **Country** *(categorical/text)*: 24 unique values. Top values: **USA** (22.03%), **Canada** (13.56%), **France** (8.47%).
+    ↪ This column is likely used to store information about a customer's geographical location, specifically their country of origin or current residence. The varied sample values suggest that it may be used to track customers from diverse international regions.
+- **PostalCode** *(unknown type)*
+    ↪ This column appears to store postal codes or zip codes that uniquely identify a geographic location, such as a city, town, or region. The varied formats and inclusion of non-numerical characters like hyphens and letters suggest that it's designed to accommodate international postal codes from different countries.
+- **Phone** *(unknown type)*
+    ↪ This column appears to store international phone numbers of customers, including country codes and local numbers. It's likely used to facilitate communication with customers from various regions around the world.
+- **Fax** *(unknown type)*
+    ↪ This column is likely a storage for customer's fax numbers, which are international phone numbers used to send and receive facsimile documents. The presence of country codes (e.g., '+55' for Brazil, '+420' for Czech Republic) suggests that this column can accommodate fax numbers from various countries.
+- **Email** *(categorical/text)*: 59 unique values. Top values: **luisg@embraer.com.br** (1.69%), **leonekohler@surfeu.de** (1.69%), **ftremblay@gmail.com** (1.69%).
+    ↪ This column likely represents a unique identifier for each customer's primary electronic communication method, such as their preferred email address for receiving messages or notifications. It appears to store a standard format email address with varying top-level domains and local parts.
+- **SupportRepId** *(numeric)*: Ranges from 3.0 to 5.0, mean=3.95, median=4.00, std=0.82.
+    ↪ This column appears to represent the unique identifier for the customer support representatives assigned to each customer, with values indicating which representative is responsible for handling that customer's inquiries or issues. The integer data type suggests a numerical value that uniquely identifies each support representative.
+
+
+
+### Table 4/11: Employee
+**Summary:** The `Employee` table stores information about individual employees working at Chinook Corp., including their identifying details, job titles, and contact information. This data can be used to manage employee records, track reporting structures, and analyze workforce characteristics.
+
+## Columns:
+- **EmployeeId** *(identifier)*: Unique ID ranging from 1.0 to 8.0.
+    ↪ This column appears to represent a unique identifier for each employee, perhaps serving as their personnel number or employee code. It's an integer value that distinguishes one staff member from another within the organization.
+- **LastName** *(categorical/text)*: 8 unique values. Top values: **Adams** (12.5%), **Edwards** (12.5%), **Peacock** (12.5%).
+    ↪ This column appears to represent the surname or family name of each employee, indicating their familial connection and identity within the organization. The length limit of NVARCHAR(20) suggests that it can accommodate a wide range of common last names without truncation.
+- **FirstName** *(categorical/text)*: 8 unique values. Top values: **Andrew** (12.5%), **Nancy** (12.5%), **Jane** (12.5%).
+    ↪ This column appears to represent the given names of employees, likely used as a unique identifier for each individual within the organization. It provides a personal touch and humanizes the employee records, making it easy to refer to them by their first name in various business settings.
+- **Title** *(categorical/text)*: 5 unique values. Top values: **Sales Support Agent** (37.5%), **IT Staff** (25.0%), **General Manager** (12.5%).
+    ↪ This column is likely a representation of an employee's job position or role within the organization, providing information about their responsibilities and level of authority. The varying titles suggest that employees have different levels of seniority, management roles, or functional specialties.
+- **ReportsTo** *(numeric)*: Ranges from 1.0 to 6.0, mean=2.86, median=2.00, std=2.19.
+    ↪ This column likely represents the hierarchical relationship between employees, where each value corresponds to the unique identifier of an employee's direct supervisor or manager. In other words, it indicates who each employee reports to or works under in a organizational structure.
+- **BirthDate** *(datetime)*: From 1947-09-19 00:00:00 to 1973-08-29 00:00:00.
+    ↪ This column likely captures the exact date and time of when each employee was born, providing a record of their age or seniority within the organization. The format, including year, month, day, and hour information, suggests that it's not just a simple date value, but rather a precise timestamp that can be used to calculate age or other relevant metrics.
+- **HireDate** *(datetime)*: From 2002-04-01 00:00:00 to 2004-03-04 00:00:00.
+    ↪ This column appears to represent the date and time when an employee started working at the company, providing a record of each individual's tenure and service history. It may be used to track employee longevity, evaluate job performance over time, or determine eligibility for certain benefits and promotions.
+- **Address** *(categorical/text)*: 8 unique values. Top values: **11120 Jasper Ave NW** (12.5%), **825 8 Ave SW** (12.5%), **1111 6 Ave SW** (12.5%).
+    ↪ This column likely represents a physical street address or location where an employee resides, such as their home address, which could be used for communication, delivery of mail or packages, and other purposes. The sample values provided suggest that this address is typically a combination of street number, name, and direction (e.g., avenue, street), which is consistent with typical residential addresses.
+- **City** *(categorical/text)*: 3 unique values. Top values: **Calgary** (62.5%), **Lethbridge** (25.0%), **Edmonton** (12.5%).
+    ↪ This column is likely used to store the city where each employee is located or resides, providing information about their geographical location. The sample values suggest that these cities are all in the same province or region, possibly implying a workplace setting.
+- **State** *(categorical/text)*: 1 unique values. Top values: **AB** (100.0%).
+    ↪ This column likely represents the two-letter postal code abbreviation for a state or province where an employee is located, such as "AB" representing Alberta in Canada or Alabama in the United States. It may be used to store and track employee addresses at a higher geographic level than city or zip code.
+- **Country** *(categorical/text)*: 1 unique values. Top values: **Canada** (100.0%).
+    ↪ This column appears to store information about an employee's country of origin or nationality, which might be used to track geographic diversity within the company or tailor policies and benefits to employees from different regions. The fact that the sample value is 'Canada' suggests this column is likely used for international personnel records.
+- **PostalCode** *(categorical/text)*: 8 unique values. Top values: **T5K 2N1** (12.5%), **T2P 2T3** (12.5%), **T2P 5M5** (12.5%).
+    ↪ This column appears to store postal codes for employees' residences or workplaces, likely used for addressing mail, shipping packages, or tracking geographic information. The fact that the values are formatted like Canadian postal codes (e.g., "T5K 2N1") suggests a possible connection to Canada or businesses operating in that region.
+- **Phone** *(categorical/text)*: 7 unique values. Top values: **+1 (403) 262-3443** (25.0%), **+1 (780) 428-9482** (12.5%), **+1 (403) 263-4423** (12.5%).
+    ↪ This column appears to store phone numbers of employees, possibly including international country codes and area codes, with a focus on Canadian phone number formats (e.g., '+1' for North America, followed by city and area code). The varying lengths of the values suggest that this column is intended to accommodate different types of phone numbers.
+- **Fax** *(categorical/text)*: 8 unique values. Top values: **+1 (780) 428-3457** (12.5%), **+1 (403) 262-3322** (12.5%), **+1 (403) 262-6712** (12.5%).
+    ↪ This column appears to hold phone number information, specifically fax numbers, for employees, possibly formatted with international dialing codes and area codes to facilitate communication. The varying formats suggest that both national and international fax numbers are represented, which is common in a professional or business setting.
+- **Email** *(categorical/text)*: 8 unique values. Top values: **andrew@chinookcorp.com** (12.5%), **nancy@chinookcorp.com** (12.5%), **jane@chinookcorp.com** (12.5%).
+    ↪ This column appears to store the primary electronic communication address for each employee, such as a company email account used for professional purposes. The values include a mix of employee names and corresponding email domains, suggesting that it's an identifier for electronic mail correspondence.
+
+
+
+### Table 5/11: Genre
+**Summary:** As a database analyst, I'd summarize the `Genre` table as: This table categorizes and identifies different music genres, with each row representing a unique genre (e.g., Rock or Jazz). The primary purpose is to store and manage information about various music styles.
+
+## Columns:
+- **GenreId** *(identifier)*: Unique ID ranging from 1.0 to 25.0.
+    ↪ This column likely represents a unique identifier or classification for different types of music genres, such as rock, pop, jazz, and so on. The values in this column probably correspond to distinct categories that help organize and categorize musical styles.
+- **Name** *(categorical/text)*: 25 unique values. Top values: **Rock** (4.0%), **Jazz** (4.0%), **Metal** (4.0%).
+    ↪ This column likely represents a category or style of music that a band, artist, or album belongs to, providing a way to classify and group musical genres into distinct categories. The sample values include well-known examples like Rock, Metal, and Jazz, as well as more specific sub-genres like Alternative & Punk and Rock And Roll.
+
+
+
+### Table 6/11: Invoice
+**Summary:** Here is a summary of the `Invoice` table: This table stores information about individual customer invoices, including the date and details of each invoice, such as the billing address, city, state, country, and total amount.
+
+## Columns:
+- **InvoiceId** *(identifier)*: Unique ID ranging from 1.0 to 412.0.
+    ↪ This column appears to be an identifier for individual invoices, likely serving as a unique reference number or key that distinguishes one invoice from another. It's probably used to track and organize invoice data within the system.
+- **CustomerId** *(numeric)*: Ranges from 1.0 to 59.0, mean=29.93, median=30.00, std=17.01.
+    ↪ This column likely represents a unique identifier for each customer who has placed an order, with higher values possibly indicating more frequent or larger customers. The integer data type suggests that the values are numerical and can be used to establish a meaningful relationship between different records in the table.
+- **InvoiceDate** *(datetime)*: From 2009-01-01 00:00:00 to 2013-12-22 00:00:00.
+    ↪ This column appears to capture the date and time at which each invoice was issued or processed, providing a timestamp for when payments were made or services rendered. It's likely used to track the timing of transactions and facilitate analysis of payment patterns or processing schedules.
+- **BillingAddress** *(categorical/text)*: 59 unique values. Top values: **Theodor-Heuss-Straße 34** (1.7%), **Ullevålsveien 14** (1.7%), **Grétrystraat 63** (1.7%).
+    ↪ This column appears to store the physical addresses where invoices were sent or billed, including street names, numbers, and possibly postal codes. The varied formatting of sample values suggests that the address styles differ between countries or regions, with some using abbreviations (e.g., "ST NW") and others using more verbose formats.
+- **BillingCity** *(categorical/text)*: 53 unique values. Top values: **Berlin** (3.4%), **London** (3.4%), **Mountain View** (3.4%).
+    ↪ This column is likely used to store information about the city where an invoice was sent for billing purposes, and it appears to contain a list of cities from different countries around the world. The values in this column may be useful for analyzing geographic trends or identifying patterns related to invoices and their corresponding billings.
+- **BillingState** *(unknown type)*
+    ↪ This column appears to represent the two-letter postal abbreviation or full state name for where an invoice is being sent, providing information about the geographic location associated with each billing transaction.
+- **BillingCountry** *(categorical/text)*: 24 unique values. Top values: **USA** (22.09%), **Canada** (13.59%), **France** (8.5%).
+    ↪ This column is likely intended to store the country of origin for customers or entities that have received invoices, indicating where the billing address is located. The variety of countries listed, including both European and North American nations, suggests that this table may be used for tracking customer information across multiple regions.
+- **BillingPostalCode** *(unknown type)*
+    ↪ Based on the metadata, it appears that this column captures a unique postal code or zip code used for billing purposes, which is typically associated with a physical address. The varying formats of the sample values suggest that international codes are also included, indicating that the column likely represents a flexible and globalized billing location identifier.
+- **Total** *(numeric)*: Ranges from 0.99 to 25.86, mean=5.65, median=3.96, std=4.75.
+    ↪ Based on the metadata, it appears that this column likely represents the total cost of an invoice, with values ranging from a few dollars to nearly $14. The precision of two decimal places suggests that the column is intended to store monetary amounts in a currency format, such as USD.
+
+
+
+### Table 7/11: InvoiceLine
+**Summary:** Here's a summary of the `InvoiceLine` table: This table represents individual line items on an invoice, capturing details such as the itemized products or services (TrackId), their prices (UnitPrice), and quantities (Quantity) ordered.
+
+## Columns:
+- **InvoiceLineId** *(identifier)*: Unique ID ranging from 1.0 to 1000.0.
+    ↪ This unique identifier is likely used to distinguish individual line items within an invoice, assigning a distinct value to each product or service being billed. It serves as a primary key, allowing for efficient lookups and joins with other tables related to invoices and their corresponding line items.
+- **InvoiceId** *(numeric)*: Ranges from 1.0 to 185.0, mean=92.67, median=93.50, std=53.20.
+    ↪ This column is a unique identifier for each individual invoice item, linking it to its corresponding parent invoice. It seems to represent the primary key or foreign key referencing an invoice's identity, distinguishing one item from another within the same invoice.
+- **TrackId** *(identifier)*: Unique ID ranging from 1.0 to 3500.0.
+    ↪ This column likely represents a unique identifier for each track or song in an inventory, catalog, or playlist, with values representing distinct numerical designations (e.g., "Track 2", "Track 4", etc.). The fact that it's an INTEGER type suggests this is a sequential or ordinal identifier rather than a descriptive or categorical label.
+- **UnitPrice** *(numeric)*: Ranges from 0.99 to 1.99, mean=1.02, median=0.99, std=0.17.
+    ↪ This column likely represents the cost of a single unit or item sold on an invoice, with a maximum precision of two decimal places (e.g., $0.99 or $1.99). The numerical value is used to calculate the total cost of each item in the invoice.
+- **Quantity** *(numeric)*: Ranges from 1.0 to 1.0, mean=1.00, median=1.00, std=0.00.
+    ↪ This column likely represents the number of items or units being invoiced for a particular product or service, providing a count of the quantity sold or delivered. In other words, it measures how many times a certain item is included in an invoice.
+
+
+
+### Table 8/11: MediaType
+**Summary:** This `MediaType` table categorizes and identifies various types of media content, such as music or video files, based on their characteristics. It provides a unique identifier (`MediaTypeId`) and a descriptive name for each type of media.
+
+## Columns:
+- **MediaTypeId** *(identifier)*: Unique ID ranging from 1.0 to 5.0.
+    ↪ This integer column appears to represent a unique identifier or code for different types of media, such as music genres (e.g., rock, pop, hip-hop), movie categories (e.g., action, comedy, drama), or video game platforms (e.g., PC, Xbox, PlayStation). The values likely correspond to distinct categories that can be used to classify and organize media content in some way.
+- **Name** *(categorical/text)*: 5 unique values. Top values: **MPEG audio file** (20.0%), **Protected AAC audio file** (20.0%), **Protected MPEG-4 video file** (20.0%).
+    ↪ This column appears to store descriptive names for different types of digital media files, such as audio or video content, with varying levels of protection or purchase status. The values suggest a focus on multimedia formats like music and video files, which can be played back on devices or platforms.
+
+
+
+### Table 9/11: Playlist
+**Summary:** The `Playlist` table appears to store information about different playlists, which could be collections of songs or media items organized by theme or category. The two example rows suggest that this table might be used to manage and categorize various types of content, such as music or movies.
+
+## Columns:
+- **PlaylistId** *(identifier)*: Unique ID ranging from 1.0 to 18.0.
+    ↪ This column is a unique identifier for each individual playlist, serving as a key to distinguish one playlist from another. It likely stores a sequential or incremental value that corresponds to the playlist's position or order in a collection of playlists.
+- **Name** *(categorical/text)*: 14 unique values. Top values: **Music** (11.11%), **Movies** (11.11%), **TV Shows** (11.11%).
+    ↪ This column appears to represent a categorization or classification of content types that are part of a playlist, such as music genres, video formats, or other media categories. The sample values suggest that this playlist contains various forms of entertainment and informational content that can be organized by type.
+
+
+
+### Table 10/11: PlaylistTrack
+**Summary:** The `PlaylistTrack` table stores information about which tracks are included in each playlist. It helps us identify which tracks belong to specific playlists, allowing us to analyze and manage music playlists effectively.
+
+## Columns:
+- **PlaylistId** *(numeric)*: Ranges from 1.0 to 1.0, mean=1.00, median=1.00, std=0.00.
+    ↪ This column appears to represent the unique identifier for each playlist, allowing you to link individual tracks to their respective playlists. It's likely used to associate a track with a particular music collection or mix.
+- **TrackId** *(identifier)*: Unique ID ranging from 63.0 to 3502.0.
+    ↪ This column likely represents a unique identifier for each track within a playlist, serving as a reference to the individual audio files or songs that are part of the playlist collection. The values appear to be numerical IDs assigned to each distinct track, allowing for easy referencing and organization of the music tracks in the playlist database.
+
+
+
+### Table 11/11: Track
+**Summary:** As a database analyst, I'd summarize the purpose of this `Track` table as: This table stores detailed information about individual tracks within music albums, including their names, composers, and technical metadata such as playback length and price.
+
+## Columns:
+- **TrackId** *(identifier)*: Unique ID ranging from 1.0 to 1000.0.
+    ↪ This column appears to represent a unique identifier for individual tracks or songs within a music database, with each value representing a distinct entity. It's likely used as a primary key to uniquely identify and distinguish one track from another.
+- **Name** *(categorical/text)*: 972 unique values. Top values: **Smoke On The Water** (0.3%), **She** (0.2%), **Firmamento** (0.2%).
+    ↪ This column appears to store the titles of hard rock or heavy metal songs, likely from the early days of the genre. The song titles are a mix of album tracks and singles, and they all have a distinct flavor that suggests a connection to the early 1980s metal scene.
+- **AlbumId** *(numeric)*: Ranges from 1.0 to 80.0, mean=40.91, median=39.00, std=21.83.
+    ↪ This column likely represents a unique identifier for each album in the Track table, assigning a numerical value to each distinct album that corresponds to tracks in the database. This allows for efficient linking and querying of related track information by album.
+- **MediaTypeId** *(numeric)*: Ranges from 1.0 to 2.0, mean=1.00, median=1.00, std=0.06.
+    ↪ This column appears to represent the type of medium or format that a track is recorded on, such as CD (represented by '1') or another digital format (represented by '2'). It's likely used to categorize and classify tracks based on their original recording medium.
+- **GenreId** *(numeric)*: Ranges from 1.0 to 11.0, mean=4.04, median=4.00, std=2.87.
+    ↪ This column appears to categorize tracks by their musical genre, with each unique value representing a distinct type of music, such as rock, pop, hip-hop, or electronic. The presence of integer values suggests that the genres are being represented using a standardized identifier or code rather than descriptive text.
+- **Composer** *(unknown type)*
+    ↪ This column appears to store information about the individuals who created or wrote a particular piece of music, such as songwriters, musicians, or bands. The values are likely lists of names that represent the creative forces behind each track in the table.
+- **Milliseconds** *(numeric)*: Ranges from 4884.0 to 1196094.0, mean=263260.59, median=248411.00, std=109578.37.
+    ↪ This column appears to represent a measure of time duration or elapsed time, perhaps indicating the length of a musical track, audio clip, or other type of timed media segment. The values are likely representing milliseconds, suggesting that this is a precise measurement of time down to one-thousandth of a second.
+- **Bytes** *(numeric)*: Ranges from 161266.0 to 39267613.0, mean=8579645.09, median=8133672.00, std=3631065.44.
+    ↪ This column likely represents a unique identifier or reference number for individual tracks, possibly used to identify specific songs, albums, or music files within a database. The presence of integer values and the format of the sample data suggest that these numbers might be tracking IDs or similar codes used to organize and distinguish between different musical tracks.
+- **UnitPrice** *(numeric)*: Ranges from 0.99 to 0.99, mean=0.99, median=0.99, std=0.00.
+    ↪ This column likely represents the cost or price per unit of a track (e.g., music file) or other type of audio content, where the precision is up to two decimal places, suggesting cents or fractions of a dollar. For example, the sample value '0.99' might indicate that this track costs $0.99 per unit.
+
+
+# 🔑 Final Inferred Keys (PRAGMA + Fallback)
+
+## Album
+Primary Keys: AlbumId
+
+Foreign Keys:
+- ArtistId → Artist.ArtistId
+
+## Artist
+Primary Keys: ArtistId
+
+Foreign Keys:
+
+## Customer
+Primary Keys: CustomerId
+
+Foreign Keys:
+- SupportRepId → Employee.EmployeeId
+
+## Employee
+Primary Keys: EmployeeId
+
+Foreign Keys:
+- ReportsTo → Employee.EmployeeId
+
+## Genre
+Primary Keys: GenreId
+
+Foreign Keys:
+
+## Invoice
+Primary Keys: InvoiceId
+
+Foreign Keys:
+- CustomerId → Customer.CustomerId
+
+## InvoiceLine
+Primary Keys: InvoiceLineId
+
+Foreign Keys:
+- TrackId → Track.TrackId
+- InvoiceId → Invoice.InvoiceId
+
+## MediaType
+Primary Keys: MediaTypeId
+
+Foreign Keys:
+
+## Playlist
+Primary Keys: PlaylistId
+
+Foreign Keys:
+
+## PlaylistTrack
+Primary Keys: PlaylistId
+
+Foreign Keys:
+- TrackId → Track.TrackId
+- PlaylistId → Playlist.PlaylistId
+
+## Track
+Primary Keys: TrackId
+
+Foreign Keys:
+- MediaTypeId → MediaType.MediaTypeId
+- GenreId → Genre.GenreId
+- AlbumId → Album.AlbumId

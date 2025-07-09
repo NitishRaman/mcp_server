@@ -1,0 +1,86 @@
+[Album]
+    *AlbumId {label:"INTEGER"}
+    ArtistId {label:"INTEGER"}
+    Title {label:"NVARCHAR(160)"}
+[Artist]
+    *ArtistId {label:"INTEGER"}
+    Name {label:"NVARCHAR(120)"}
+[Customer]
+    *CustomerId {label:"INTEGER"}
+    Address {label:"NVARCHAR(70)"}
+    City {label:"NVARCHAR(40)"}
+    Company {label:"NVARCHAR(80)"}
+    Country {label:"NVARCHAR(40)"}
+    Email {label:"NVARCHAR(60)"}
+    Fax {label:"NVARCHAR(24)"}
+    FirstName {label:"NVARCHAR(40)"}
+    LastName {label:"NVARCHAR(20)"}
+    Phone {label:"NVARCHAR(24)"}
+    PostalCode {label:"NVARCHAR(10)"}
+    State {label:"NVARCHAR(40)"}
+    SupportRepId {label:"INTEGER"}
+[Employee]
+    *EmployeeId {label:"INTEGER"}
+    Address {label:"NVARCHAR(70)"}
+    BirthDate {label:"DATETIME"}
+    City {label:"NVARCHAR(40)"}
+    Country {label:"NVARCHAR(40)"}
+    Email {label:"NVARCHAR(60)"}
+    Fax {label:"NVARCHAR(24)"}
+    FirstName {label:"NVARCHAR(20)"}
+    HireDate {label:"DATETIME"}
+    LastName {label:"NVARCHAR(20)"}
+    Phone {label:"NVARCHAR(24)"}
+    PostalCode {label:"NVARCHAR(10)"}
+    ReportsTo {label:"INTEGER"}
+    State {label:"NVARCHAR(40)"}
+    Title {label:"NVARCHAR(30)"}
+[Genre]
+    *GenreId {label:"INTEGER"}
+    Name {label:"NVARCHAR(120)"}
+[Invoice]
+    *InvoiceId {label:"INTEGER"}
+    BillingAddress {label:"NVARCHAR(70)"}
+    BillingCity {label:"NVARCHAR(40)"}
+    BillingCountry {label:"NVARCHAR(40)"}
+    BillingPostalCode {label:"NVARCHAR(10)"}
+    BillingState {label:"NVARCHAR(40)"}
+    CustomerId {label:"INTEGER"}
+    InvoiceDate {label:"DATETIME"}
+    Total {label:"NUMERIC(10, 2)"}
+[InvoiceLine]
+    *InvoiceLineId {label:"INTEGER"}
+    InvoiceId {label:"INTEGER"}
+    Quantity {label:"INTEGER"}
+    TrackId {label:"INTEGER"}
+    UnitPrice {label:"NUMERIC(10, 2)"}
+[Track]
+    *TrackId {label:"INTEGER"}
+    AlbumId {label:"INTEGER"}
+    Bytes {label:"INTEGER"}
+    Composer {label:"NVARCHAR(220)"}
+    GenreId {label:"INTEGER"}
+    MediaTypeId {label:"INTEGER"}
+    Milliseconds {label:"INTEGER"}
+    Name {label:"NVARCHAR(200)"}
+    UnitPrice {label:"NUMERIC(10, 2)"}
+[MediaType]
+    *MediaTypeId {label:"INTEGER"}
+    Name {label:"NVARCHAR(120)"}
+[Playlist]
+    *PlaylistId {label:"INTEGER"}
+    Name {label:"NVARCHAR(120)"}
+[PlaylistTrack]
+    *PlaylistId {label:"INTEGER"}
+    *TrackId {label:"INTEGER"}
+Artist."ArtistId" 1--* Album."ArtistId"
+Employee."EmployeeId" ?--* Customer."SupportRepId"
+Employee."EmployeeId" ?--* Employee."ReportsTo"
+Customer."CustomerId" 1--* Invoice."CustomerId"
+Invoice."InvoiceId" 1--* InvoiceLine."InvoiceId"
+Track."TrackId" 1--* InvoiceLine."TrackId"
+Album."AlbumId" ?--* Track."AlbumId"
+Genre."GenreId" ?--* Track."GenreId"
+MediaType."MediaTypeId" 1--* Track."MediaTypeId"
+Track."TrackId" 1--* PlaylistTrack."TrackId"
+Playlist."PlaylistId" 1--* PlaylistTrack."PlaylistId"

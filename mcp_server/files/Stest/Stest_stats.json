@@ -1,0 +1,102 @@
+{
+  "enrollment": {
+    "enrollment_id": {
+      "type": "integer"
+    },
+    "student_id": {
+      "type": "integer"
+    },
+    "class_id": {
+      "type": "integer"
+    },
+    "enrolled_at": {
+      "type": "timestamp with time zone"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  },
+  "marks": {
+    "mark_id": {
+      "type": "integer"
+    },
+    "enrollment_id": {
+      "type": "integer"
+    },
+    "score": {
+      "type": "integer"
+    },
+    "max_score": {
+      "type": "integer"
+    },
+    "graded_at": {
+      "type": "timestamp with time zone"
+    }
+  },
+  "student": {
+    "student_id": {
+      "type": "integer"
+    },
+    "dob": {
+      "type": "date"
+    },
+    "enrolled_at": {
+      "type": "timestamp with time zone"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "section": {
+      "type": "text"
+    },
+    "first_name": {
+      "type": "text"
+    },
+    "last_name": {
+      "type": "text"
+    },
+    "email": {
+      "type": "text"
+    }
+  },
+  "teacher": {
+    "teacher_id": {
+      "type": "integer"
+    },
+    "hire_date": {
+      "type": "date"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "first_name": {
+      "type": "text"
+    },
+    "last_name": {
+      "type": "text"
+    },
+    "email": {
+      "type": "text"
+    }
+  },
+  "class": {
+    "class_id": {
+      "type": "integer"
+    },
+    "teacher_id": {
+      "type": "integer"
+    },
+    "created_at": {
+      "type": "timestamp with time zone"
+    },
+    "code": {
+      "type": "text"
+    },
+    "name": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

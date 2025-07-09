@@ -1,0 +1,18 @@
+### Table 1/5: enrollment
+**Summary:** This `enrollment` table appears to store information about students' participation in classes. Each row represents a student's enrollment in a specific class, including the date they started and whether their enrollment is currently active or not.
+
+
+### Table 2/5: marks
+**Summary:** This table, `marks`, appears to contain information about the grades or scores given to students in a course or program. Each row represents an individual student's score on a particular assessment, with columns storing details such as the ID of the enrollment, the actual score achieved, the maximum possible score, and when the grade was recorded.
+
+
+### Table 3/5: student
+**Summary:** This table appears to contain information about individual students in a educational institution or program. Each row represents a single student, with columns providing details such as their identification number, birthdate, enrollment date, and current status (active or inactive).
+
+
+### Table 4/5: teacher
+**Summary:** This table, `teacher`, stores information about individual teachers, including their unique ID, date of hire, current employment status, name details, and contact email address. It's likely used to manage teacher records and track important data such as hiring dates and active/inactive status.
+
+
+### Table 5/5: class
+**Summary:** This `class` table likely contains information about educational classes or sessions, such as the teacher assigned to each class, the date and time it was created, and details about the class itself (code, name, and description). Think of it like a catalog of all the classes being offered.

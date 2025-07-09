@@ -1,0 +1,42 @@
+### Table 1/11: Album
+**Summary:** Here's a summary of the `Album` table: This table stores information about individual albums released by various artists. Each row represents an album, with columns capturing its unique ID, title, and association with a specific artist.
+
+
+### Table 2/11: Artist
+**Summary:** The `Artist` table stores information about individual artists, specifically their unique identifier and name. This allows for tracking and organization of artist data for analysis or reporting purposes.
+
+
+### Table 3/11: Customer
+**Summary:** This `Customer` table stores information about individual customers, including their personal details, company affiliation (if any), and contact information. It also tracks which support representative is assigned to each customer, facilitating communication and issue resolution.
+
+
+### Table 4/11: Employee
+**Summary:** The `Employee` table stores information about individual employees working at Chinook Corp., including their identifying details, job titles, and contact information. This data can be used to manage employee records, track reporting structures, and analyze workforce characteristics.
+
+
+### Table 5/11: Genre
+**Summary:** As a database analyst, I'd summarize the `Genre` table as: This table categorizes and identifies different music genres, with each row representing a unique genre (e.g., Rock or Jazz). The primary purpose is to store and manage information about various music styles.
+
+
+### Table 6/11: Invoice
+**Summary:** Here is a summary of the `Invoice` table: This table stores information about individual customer invoices, including the date and details of each invoice, such as the billing address, city, state, country, and total amount.
+
+
+### Table 7/11: InvoiceLine
+**Summary:** Here's a summary of the `InvoiceLine` table: This table represents individual line items on an invoice, capturing details such as the itemized products or services (TrackId), their prices (UnitPrice), and quantities (Quantity) ordered.
+
+
+### Table 8/11: MediaType
+**Summary:** This `MediaType` table categorizes and identifies various types of media content, such as music or video files, based on their characteristics. It provides a unique identifier (`MediaTypeId`) and a descriptive name for each type of media.
+
+
+### Table 9/11: Playlist
+**Summary:** The `Playlist` table appears to store information about different playlists, which could be collections of songs or media items organized by theme or category. The two example rows suggest that this table might be used to manage and categorize various types of content, such as music or movies.
+
+
+### Table 10/11: PlaylistTrack
+**Summary:** The `PlaylistTrack` table stores information about which tracks are included in each playlist. It helps us identify which tracks belong to specific playlists, allowing us to analyze and manage music playlists effectively.
+
+
+### Table 11/11: Track
+**Summary:** As a database analyst, I'd summarize the purpose of this `Track` table as: This table stores detailed information about individual tracks within music albums, including their names, composers, and technical metadata such as playback length and price.

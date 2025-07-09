@@ -1,0 +1,110 @@
+[2025-07-09 01:15:31.306518]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT e.first_name, e.email 
+FROM enrollment e 
+JOIN class c ON e.class_id = c.class_id 
+WHERE c.name = 'MATH101' AND e.active = TRUE;
+================================================================================
+[2025-07-09 01:17:01.052977]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT * 
+FROM enrollment
+================================================================================
+[2025-07-09 01:30:18.321874]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+Select *
+FROM ENROLLMENT
+================================================================================
+[2025-07-09 01:30:56.172026]
+User Prompt: Get names and emails of students enrolled in class 'MATH101'.
+LLM Response:
+❌ SQL Execution Error: Execution failed on sql 'SELECT s.first_name, s.email 
+FROM enrollment e 
+JOIN student s ON e.student_id = s.student_id 
+WHERE e.class_id IN (SELECT c.class_id FROM class c WHERE c.name = 'MATH101' AND c.active = TRUE);
+
+
+This query will return the first name and email of students who are enrolled in a class with the name 'MATH101'. The `IN` clause is used to filter the enrollment records to only include those where the class_id matches the ID of the 'MATH101' class.;': no such column: c.active
+================================================================================
+[2025-07-09 01:31:25.149935]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT s.first_name, s.email 
+FROM enrollment e 
+JOIN student s ON e.student_id = s.student_id 
+WHERE e.class_id IN (SELECT c.class_id FROM class c WHERE c.name = 'MATH101' AND c.active = TRUE)
+================================================================================
+[2025-07-09 01:31:28.765139]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT s.first_name, s.email 
+FROM enrollment e 
+JOIN student s ON e.student_id = s.student_id 
+WHERE e.class_id IN (SELECT c.class_id FROM class c WHERE c.name = 'MATH101' AND c.active = TRUE)
+================================================================================
+[2025-07-09 01:32:02.092693]
+User Prompt: ❌ SQL Execution Error: Execution failed on sql 'SELECT s.first_name, s.email 
+FROM enrollment e 
+JOIN student s ON e.student_id = s.student_id 
+WHERE e.class_id IN (SELECT c.class_id FROM class c WHERE c.name = 'MATH101' AND c.active = TRUE);
+
+
+This query will return the first name and email of students who are enrolled in a class with the name 'MATH101'. The `IN` clause is used to filter the enrollment records to only include those where the class_id matches the ID of the 'MATH101' class.;': no such column: c.active
+LLM Response:
+SELECT s.first_name, s.email 
+FROM enrollment e 
+JOIN student s ON e.student_id = s.student_id 
+WHERE e.class_id IN (SELECT c.teacher_id FROM class c WHERE c.name = 'MATH101' AND exists (select 1 from teacher t where c.teacher_id=t.teacher_id and t.active=true));
+================================================================================
+[2025-07-09 01:34:30.782832]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT s.first_name, s.email 
+FROM enrollment e 
+JOIN student s ON e.student_id = s.student_id 
+WHERE e.class_id IN (SELECT c.teacher_id FROM class c WHERE c.name = 'MATH101' AND exists (select 1 from teacher t where c.teacher_id=t.teacher_id and t.active=true));
+================================================================================
+[2025-07-09 01:34:36.220856]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT s.first_name, s.email 
+FROM enrollment e 
+JOIN student s ON e.student_id = s.student_id 
+WHERE e.class_id IN (SELECT c.teacher_id FROM class c WHERE c.name = 'MATH101' AND exists (select 1 from teacher t where c.teacher_id=t.teacher_id and t.active=true));
+================================================================================
+[2025-07-09 01:35:10.829539]
+User Prompt: empty result try again dont complicate its very simple
+LLM Response:
+❌ SQL Execution Error: Execution failed on sql 'SELECT e.student_id, c.name AS class_name
+FROM enrollment e
+JOIN class c ON e.class_id = c.class_id;
+
+
+This query joins the `enrollment` table with the `class` table on the `class_id` column, and returns only the `student_id` and the corresponding `name` of the class.;': You can only execute one statement at a time.
+================================================================================
+[2025-07-09 01:35:36.687260]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT e.student_id, c.name AS class_name
+FROM enrollment e
+JOIN class c ON e.class_id = c.class_id
+================================================================================

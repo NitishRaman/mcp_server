@@ -1,0 +1,97 @@
+{
+  "Album": {
+    "primary_keys": [
+      "AlbumId"
+    ],
+    "foreign_keys": [
+      "ArtistId \u2192 Artist.ArtistId"
+    ],
+    "source": "pragma"
+  },
+  "Artist": {
+    "primary_keys": [
+      "ArtistId"
+    ],
+    "foreign_keys": [],
+    "source": "inferred"
+  },
+  "Customer": {
+    "primary_keys": [
+      "CustomerId"
+    ],
+    "foreign_keys": [
+      "SupportRepId \u2192 Employee.EmployeeId"
+    ],
+    "source": "pragma"
+  },
+  "Employee": {
+    "primary_keys": [
+      "EmployeeId"
+    ],
+    "foreign_keys": [
+      "ReportsTo \u2192 Employee.EmployeeId"
+    ],
+    "source": "pragma"
+  },
+  "Genre": {
+    "primary_keys": [
+      "GenreId"
+    ],
+    "foreign_keys": [],
+    "source": "inferred"
+  },
+  "Invoice": {
+    "primary_keys": [
+      "InvoiceId"
+    ],
+    "foreign_keys": [
+      "CustomerId \u2192 Customer.CustomerId"
+    ],
+    "source": "pragma"
+  },
+  "InvoiceLine": {
+    "primary_keys": [
+      "InvoiceLineId"
+    ],
+    "foreign_keys": [
+      "TrackId \u2192 Track.TrackId",
+      "InvoiceId \u2192 Invoice.InvoiceId"
+    ],
+    "source": "pragma"
+  },
+  "MediaType": {
+    "primary_keys": [
+      "MediaTypeId"
+    ],
+    "foreign_keys": [],
+    "source": "inferred"
+  },
+  "Playlist": {
+    "primary_keys": [
+      "PlaylistId"
+    ],
+    "foreign_keys": [],
+    "source": "inferred"
+  },
+  "PlaylistTrack": {
+    "primary_keys": [
+      "PlaylistId"
+    ],
+    "foreign_keys": [
+      "TrackId \u2192 Track.TrackId",
+      "PlaylistId \u2192 Playlist.PlaylistId"
+    ],
+    "source": "pragma"
+  },
+  "Track": {
+    "primary_keys": [
+      "TrackId"
+    ],
+    "foreign_keys": [
+      "MediaTypeId \u2192 MediaType.MediaTypeId",
+      "GenreId \u2192 Genre.GenreId",
+      "AlbumId \u2192 Album.AlbumId"
+    ],
+    "source": "pragma"
+  }
+}

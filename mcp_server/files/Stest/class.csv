@@ -1,0 +1,41 @@
+class_id,code,name,description,teacher_id,created_at
+1,MATH101,Calculus I,Differential and Integral Calculus,1,2025-06-17 15:01:53.563848+00:00
+2,PHY101,Physics I,Classical Mechanics and Thermodynamics,2,2025-06-17 15:01:53.563848+00:00
+3,CHEM101,General Chemistry,Introduction to Chemical Principles,3,2025-06-17 15:01:53.563848+00:00
+4,ENG101,English Literature,Foundations of English Literature,4,2025-06-17 15:01:53.563848+00:00
+5,CS101,Computer Science I,Introduction to Programming,5,2025-06-17 15:01:53.563848+00:00
+6,BIO101,Biology I,Fundamentals of Life Sciences,6,2025-06-17 15:01:53.563848+00:00
+7,ECON101,Economics I,Microeconomic Theory,7,2025-06-17 15:01:53.563848+00:00
+8,HIST101,History of India,Ancient to Modern Indian History,8,2025-06-17 15:01:53.563848+00:00
+9,STAT101,Statistics I,Descriptive and Inferential Statistics,9,2025-06-17 15:01:53.563848+00:00
+10,PSY101,Psychology I,Basics of Cognitive Psychology,10,2025-06-17 15:01:53.563848+00:00
+11,PHIL101,Philosophy I,Ethics and Moral Philosophy,11,2025-06-17 15:01:53.563848+00:00
+12,SOC101,Sociology I,Structure and Function of Societies,12,2025-06-17 15:01:53.563848+00:00
+13,ART101,Art & Design,Fundamentals of Artistic Expression,13,2025-06-17 15:01:53.563848+00:00
+14,ENV101,Environmental Science,"Climate, Ecosystem and Conservation",14,2025-06-17 15:01:53.563848+00:00
+15,LAW101,Legal Studies,Introduction to Indian Legal System,15,2025-06-17 15:01:53.563848+00:00
+16,MATH201,Linear Algebra,"Matrices, Vectors, and Spaces",16,2025-06-17 15:01:53.563848+00:00
+17,PHY201,Electromagnetism,"Electricity, Magnetism and Circuits",17,2025-06-17 15:01:53.563848+00:00
+18,CHEM201,Organic Chemistry,Structure and Reactions of Compounds,18,2025-06-17 15:01:53.563848+00:00
+19,ENG201,Creative Writing,Narrative and Poetic Techniques,19,2025-06-17 15:01:53.563848+00:00
+20,CS201,Data Structures,Efficient Data Organization,20,2025-06-17 15:01:53.563848+00:00
+21,BIO201,Genetics,Inheritance and DNA Structure,21,2025-06-17 15:01:53.563848+00:00
+22,ECON201,Macroeconomics,National and Global Economics,22,2025-06-17 15:01:53.563848+00:00
+23,HIST201,World History,Major Events Across Civilizations,23,2025-06-17 15:01:53.563848+00:00
+24,STAT201,Inferential Statistics,Hypothesis Testing & Regression,24,2025-06-17 15:01:53.563848+00:00
+25,PSY201,Behavioral Psychology,Conditioning and Human Behavior,25,2025-06-17 15:01:53.563848+00:00
+26,PHIL201,Philosophy of Mind,Nature of Consciousness,26,2025-06-17 15:01:53.563848+00:00
+27,SOC201,Urban Sociology,Social Structures in Cities,27,2025-06-17 15:01:53.563848+00:00
+28,ART201,Modern Art,Movements and Masters of Modern Art,28,2025-06-17 15:01:53.563848+00:00
+29,ENV201,Sustainable Development,Policy and Practice,29,2025-06-17 15:01:53.563848+00:00
+30,LAW201,Constitutional Law,Rights and Duties of Citizens,30,2025-06-17 15:01:53.563848+00:00
+31,MATH202,Probability,Randomness and Risk,31,2025-06-17 15:01:53.563848+00:00
+32,CS202,Databases,SQL and Data Management,32,2025-06-17 15:01:53.563848+00:00
+33,PHY202,Quantum Mechanics,Atomic and Subatomic Systems,33,2025-06-17 15:01:53.563848+00:00
+34,CHEM202,Inorganic Chemistry,"Metals, Nonmetals, and Reactions",34,2025-06-17 15:01:53.563848+00:00
+35,ECON202,Public Finance,Government Expenditure and Taxation,35,2025-06-17 15:01:53.563848+00:00
+36,BIO202,Ecology,Ecosystems and Biodiversity,36,2025-06-17 15:01:53.563848+00:00
+37,ENG202,Drama Studies,Plays and Performative Texts,37,2025-06-17 15:01:53.563848+00:00
+38,SOC202,Family and Kinship,Structures and Cultural Variants,38,2025-06-17 15:01:53.563848+00:00
+39,PHIL202,Indian Philosophy,Darshanas and their Interpretations,39,2025-06-17 15:01:53.563848+00:00
+40,CS203,Computer Networks,Protocols and Network Design,40,2025-06-17 15:01:53.563848+00:00

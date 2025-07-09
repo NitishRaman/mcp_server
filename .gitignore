@@ -1,12 +1,9 @@
-﻿.venv/
+# Ignore virtual environments and Python cache
+.venv/
 venv/
 __pycache__/
 *.pyc
 *.pyo
-.ipynb_checkpoints/
-*.log
-*.db
-*.sqlite
-Sample_dataset/
-mcp_server/files/*
-!mcp_server/files/.gitkeep
+
+# Ignore test/setup artifacts
+first_time_setup_done.txt

@@ -1,0 +1,74 @@
+{
+  "Album": {
+    "primary_keys": [
+      "AlbumId"
+    ],
+    "foreign_keys": [
+      "ArtistId => Artist"
+    ]
+  },
+  "Artist": {
+    "primary_keys": [
+      "ArtistId"
+    ],
+    "foreign_keys": []
+  },
+  "Customer": {
+    "primary_keys": [
+      "CustomerId"
+    ],
+    "foreign_keys": [
+      "SupportRepId => SupportRepresentatives"
+    ]
+  },
+  "Employee": {
+    "primary_keys": [],
+    "foreign_keys": []
+  },
+  "Genre": {
+    "primary_keys": [
+      "GenreId"
+    ],
+    "foreign_keys": []
+  },
+  "Invoice": {
+    "primary_keys": [
+      "InvoiceId"
+    ]
+  },
+  "InvoiceLine": {
+    "primary_keys": [],
+    "foreign_keys": []
+  },
+  "MediaType": {
+    "primary_keys": [
+      "MediaTypeId"
+    ],
+    "foreign_keys": []
+  },
+  "Playlist": {
+    "primary_keys": [
+      "PlaylistId"
+    ],
+    "foreign_keys": []
+  },
+  "PlaylistTrack": {
+    "primary_keys": [
+      "PlaylistTrack"
+    ],
+    "foreign_keys": [
+      "PlaylistId => Playlist",
+      "TrackId => Track"
+    ]
+  },
+  "Track": {
+    "primary_keys": [
+      "TrackId"
+    ],
+    "foreign_keys": [
+      "AlbumId => Album",
+      "MediaTypeId => MediaType",
+      "GenreId => Genre"
+    ]
+  }
+}
