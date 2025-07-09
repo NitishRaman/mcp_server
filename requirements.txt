@@ -1,0 +1,62 @@
+# 📦 Core Data Handling
+pandas>=1.5
+
+numpy
+
+openpyxl
+
+sqlparse
+
+pyyaml
+
+xmlschema
+
+jsonschema
+
+tqdm
+
+jinja2
+
+chardet
+
+# 📈 Visualization
+matplotlib
+
+graphviz
+
+eralchemy
+
+# 📊 UI and Notebook
+streamlit>=1.30
+
+ipywidgets
+
+ipython
+
+notebook
+
+# 🌐 API/Backend
+fastapi
+
+uvicorn
+
+# 🤖 LLM + Embedding Backends
+openai>=1.0.0
+
+sentence-transformers
+
+chromadb>=0.5.0
+
+torch
+
+scikit-learn
+
+gpt4all
+
+# 🛢️ Database & SQL
+sqlite-utils
+
+psycopg2-binary
+
+# 🧪 Dev Tools & Typing
+typing-extensions

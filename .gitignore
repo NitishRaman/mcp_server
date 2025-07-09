@@ -1,0 +1,12 @@
+﻿.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.log
+*.db
+*.sqlite
+Sample_dataset/
+mcp_server/files/*
+!mcp_server/files/.gitkeep
