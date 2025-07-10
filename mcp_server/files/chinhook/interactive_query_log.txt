@@ -374,3 +374,100 @@ WHERE a.ArtistId IN (
   WHERE Name = 'Aerosmith'
 );
 ================================================================================
+[2025-07-10 06:43:22.610702]
+User Prompt: List all the songs by the artist AC/DC.
+LLM Response:
+Since there is no information provided about the specific albums of AC/DC, I can only suggest a possible query to retrieve all tracks from the `Track` table where the `ArtistId` matches the ID of AC/DC.
+
+Here's the SQL:
+```sql
+SELECT Name
+FROM Track
+WHERE AlbumId IN (
+  SELECT AlbumId
+  FROM Album
+  WHERE Title LIKE '%AC/DC%'
+);
+```
+This query will return a list of track names that are part of albums by AC/DC.
+Final SQL:
+SELECT Name
+FROM Track
+WHERE AlbumId IN (
+  SELECT AlbumId
+  FROM Album
+  WHERE Title LIKE '%AC/DC%'
+);
+================================================================================
+[2025-07-10 06:43:53.247704]
+User Prompt: SELECT Name
+FROM Track
+WHERE AlbumId IN (
+  SELECT AlbumId
+  FROM Album
+  WHERE Title LIKE '%AC/DC%'
+);
+LLM Response:
+Based on the provided information, I can help you with your query. Here's a possible solution:
+
+```sql
+SELECT Name
+FROM Track
+WHERE GenreId IN (
+  SELECT ArtistId
+  FROM Artist
+  WHERE Name = 'AC/DC'
+);
+```
+
+This query will return all tracks that are part of albums by the artist AC/DC. Note that this assumes there is only one album per artist and that the genre ID in the `Track` table matches the artist ID in the `Artist` table.
+
+Please let me know if you have any further questions or if you'd like to clarify anything!
+Final SQL:
+SELECT Name
+FROM Track
+WHERE GenreId IN (
+  SELECT ArtistId
+  FROM Artist
+  WHERE Name = 'AC/DC'
+);
+================================================================================
+[2025-07-10 06:44:02.818010]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT Name
+FROM Track
+WHERE AlbumId IN (
+  SELECT AlbumId
+  FROM Album
+  WHERE Title LIKE '%AC/DC%'
+);
+================================================================================
+[2025-07-10 06:44:05.813377]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT Name
+FROM Track
+WHERE AlbumId IN (
+  SELECT AlbumId
+  FROM Album
+  WHERE Title LIKE '%AC/DC%'
+);
+================================================================================
+[2025-07-10 06:44:32.885224]
+User Prompt: (manual execution)
+LLM Response:
+
+Final SQL:
+SELECT Name
+FROM Track
+WHERE GenreId IN (
+  SELECT ArtistId
+  FROM Artist
+  WHERE Name = 'AC/DC'
+);
+================================================================================
