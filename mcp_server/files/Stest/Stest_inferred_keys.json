@@ -5,11 +5,11 @@
   },
   "marks": {
     "primary_keys": [
-      "mark_id",
-      "enrollment_id"
+      "mark_id"
     ],
     "foreign_keys": [
-      "enrollment_id => enrollments"
+      "enrollment_id => enrollments",
+      "max_score => ? (assuming max_score is not a separate table, but rather a column from another table)"
     ]
   },
   "student": {

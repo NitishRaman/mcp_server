@@ -3976,3 +3976,874 @@ GROUP BY s.student_id, c.code
 ORDER BY total_marks DESC
 LIMIT 5;
 ================================================================================
+[2025-07-10 10:50:06.689861] SUCCESS
+User Question: How many teachers were hired before 2020?
+
+--- Prompt Sent to LLM ---
+
+You are an expert database analyst. Given the schema below and the user's question, generate a correct SQL query.
+
+Use only table and column names that appear *exactly* in the schema context.
+
+Schema Context:
+**Summary:** This `enrollment` table appears to store information about students' participation in classes. Each row represents a student's enrollment in a specific class, including the date they started and whether their enrollment is currently active or not.
+---
+- **enrollment_id** *(type: integer)*
+---
+- **student_id** *(type: integer)*
+---
+- **class_id** *(type: integer)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Enrollment
+2. Student
+3. Course
+4. Program
+5. Education
+
+Relationships:
+- enrollment_id → student.student_id (Foreign Key)
+- class_id → class.class_id (Foreign Key)
+
+Business Purpose:
+Student and course enrollment tracking.
+---
+**Summary:** This table, `marks`, appears to contain information about the grades or scores given to students in a course or program. Each row represents an individual student's score on a particular assessment, with columns storing details such as the ID of the enrollment, the actual score achieved, the maximum possible score, and when the grade was recorded.
+---
+- **mark_id** *(type: integer)*
+---
+- **enrollment_id** *(type: integer)*
+---
+- **score** *(type: integer)*
+---
+- **max_score** *(type: integer)*
+---
+- **graded_at** *(type: timestamp with time zone)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Grades
+2. Enrollment
+3. Assessment
+4. Education
+
+Relationships:
+- mark_id → marks (primary key)
+- enrollment_id → enrollment.enrollment_id (foreign key)
+
+Business Purpose:
+Student grade tracking and assessment management.
+---
+**Summary:** This table appears to contain information about individual students in a educational institution or program. Each row represents a single student, with columns providing details such as their identification number, birthdate, enrollment date, and current status (active or inactive).
+---
+- **student_id** *(type: integer)*
+---
+- **dob** *(type: date)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+- **section** *(type: text)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+Here are my responses:
+
+1. Keywords: Student, Education, Enrollment
+2. No relevant relationships mentioned (Foreign Keys).
+3. Business Purpose: Tracking student information for academic purposes.
+---
+**Summary:** This table, `teacher`, stores information about individual teachers, including their unique ID, date of hire, current employment status, name details, and contact email address. It's likely used to manage teacher records and track important data such as hiring dates and active/inactive status.
+---
+- **teacher_id** *(type: integer)*
+---
+- **hire_date** *(type: date)*
+---
+- **active** *(type: boolean)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+1. Teacher, Employee, Education
+2. None (No foreign key constraints)
+3. The teacher table stores information about individual teachers employed at an institution, including their identification, employment history, account status, and contact details.
+---
+**Summary:** This `class` table likely contains information about educational classes or sessions, such as the teacher assigned to each class, the date and time it was created, and details about the class itself (code, name, and description). Think of it like a catalog of all the classes being offered.
+---
+- **class_id** *(type: integer)*
+---
+- **teacher_id** *(type: integer)*
+---
+- **created_at** *(type: timestamp with time zone)*
+---
+- **code** *(type: text)*
+---
+- **name** *(type: text)*
+---
+- **description** *(type: text)*
+---
+Here is the response:
+
+Keywords:
+class, education, teacher, date, description
+
+Relationships:
+- class_id → itself (primary key), 
+- teacher_id → teacher.teacher_id (foreign key)
+
+Business Purpose:
+Track and manage classes within an educational system.
+
+User Question:
+How many teachers were hired before 2020?
+
+Return only the SQL code, nothing else.
+
+
+--- LLM Response ---
+SELECT COUNT(*) 
+FROM teacher 
+WHERE hire_date < '2020-01-01';
+================================================================================
+[2025-07-10 10:50:22.890251] SUCCESS
+User Question: How many teachers were hired before 2016?
+
+--- Prompt Sent to LLM ---
+
+You are an expert database analyst. Given the schema below and the user's question, generate a correct SQL query.
+
+Use only table and column names that appear *exactly* in the schema context.
+
+Schema Context:
+**Summary:** This `enrollment` table appears to store information about students' participation in classes. Each row represents a student's enrollment in a specific class, including the date they started and whether their enrollment is currently active or not.
+---
+- **enrollment_id** *(type: integer)*
+---
+- **student_id** *(type: integer)*
+---
+- **class_id** *(type: integer)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Enrollment
+2. Student
+3. Course
+4. Program
+5. Education
+
+Relationships:
+- enrollment_id → student.student_id (Foreign Key)
+- class_id → class.class_id (Foreign Key)
+
+Business Purpose:
+Student and course enrollment tracking.
+---
+**Summary:** This table, `marks`, appears to contain information about the grades or scores given to students in a course or program. Each row represents an individual student's score on a particular assessment, with columns storing details such as the ID of the enrollment, the actual score achieved, the maximum possible score, and when the grade was recorded.
+---
+- **mark_id** *(type: integer)*
+---
+- **enrollment_id** *(type: integer)*
+---
+- **score** *(type: integer)*
+---
+- **max_score** *(type: integer)*
+---
+- **graded_at** *(type: timestamp with time zone)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Grades
+2. Enrollment
+3. Assessment
+4. Education
+
+Relationships:
+- mark_id → marks (primary key)
+- enrollment_id → enrollment.enrollment_id (foreign key)
+
+Business Purpose:
+Student grade tracking and assessment management.
+---
+**Summary:** This table appears to contain information about individual students in a educational institution or program. Each row represents a single student, with columns providing details such as their identification number, birthdate, enrollment date, and current status (active or inactive).
+---
+- **student_id** *(type: integer)*
+---
+- **dob** *(type: date)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+- **section** *(type: text)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+Here are my responses:
+
+1. Keywords: Student, Education, Enrollment
+2. No relevant relationships mentioned (Foreign Keys).
+3. Business Purpose: Tracking student information for academic purposes.
+---
+**Summary:** This table, `teacher`, stores information about individual teachers, including their unique ID, date of hire, current employment status, name details, and contact email address. It's likely used to manage teacher records and track important data such as hiring dates and active/inactive status.
+---
+- **teacher_id** *(type: integer)*
+---
+- **hire_date** *(type: date)*
+---
+- **active** *(type: boolean)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+1. Teacher, Employee, Education
+2. None (No foreign key constraints)
+3. The teacher table stores information about individual teachers employed at an institution, including their identification, employment history, account status, and contact details.
+---
+**Summary:** This `class` table likely contains information about educational classes or sessions, such as the teacher assigned to each class, the date and time it was created, and details about the class itself (code, name, and description). Think of it like a catalog of all the classes being offered.
+---
+- **class_id** *(type: integer)*
+---
+- **teacher_id** *(type: integer)*
+---
+- **created_at** *(type: timestamp with time zone)*
+---
+- **code** *(type: text)*
+---
+- **name** *(type: text)*
+---
+- **description** *(type: text)*
+---
+Here is the response:
+
+Keywords:
+class, education, teacher, date, description
+
+Relationships:
+- class_id → itself (primary key), 
+- teacher_id → teacher.teacher_id (foreign key)
+
+Business Purpose:
+Track and manage classes within an educational system.
+
+User Question:
+How many teachers were hired before 2016?
+
+Return only the SQL code, nothing else.
+
+
+--- LLM Response ---
+SELECT COUNT(*) 
+FROM teacher 
+WHERE hire_date < '2016-01-01'::date;
+================================================================================
+[2025-07-10 10:51:08.773807] SUCCESS
+User Question: Find students who are not enrolled in any class currently.
+
+--- Prompt Sent to LLM ---
+
+You are an expert database analyst. Given the schema below and the user's question, generate a correct SQL query.
+
+Use only table and column names that appear *exactly* in the schema context.
+
+Schema Context:
+**Summary:** This `enrollment` table appears to store information about students' participation in classes. Each row represents a student's enrollment in a specific class, including the date they started and whether their enrollment is currently active or not.
+---
+- **enrollment_id** *(type: integer)*
+---
+- **student_id** *(type: integer)*
+---
+- **class_id** *(type: integer)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Enrollment
+2. Student
+3. Course
+4. Program
+5. Education
+
+Relationships:
+- enrollment_id → student.student_id (Foreign Key)
+- class_id → class.class_id (Foreign Key)
+
+Business Purpose:
+Student and course enrollment tracking.
+---
+**Summary:** This table, `marks`, appears to contain information about the grades or scores given to students in a course or program. Each row represents an individual student's score on a particular assessment, with columns storing details such as the ID of the enrollment, the actual score achieved, the maximum possible score, and when the grade was recorded.
+---
+- **mark_id** *(type: integer)*
+---
+- **enrollment_id** *(type: integer)*
+---
+- **score** *(type: integer)*
+---
+- **max_score** *(type: integer)*
+---
+- **graded_at** *(type: timestamp with time zone)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Grades
+2. Enrollment
+3. Assessment
+4. Education
+
+Relationships:
+- mark_id → marks (primary key)
+- enrollment_id → enrollment.enrollment_id (foreign key)
+
+Business Purpose:
+Student grade tracking and assessment management.
+---
+**Summary:** This table appears to contain information about individual students in a educational institution or program. Each row represents a single student, with columns providing details such as their identification number, birthdate, enrollment date, and current status (active or inactive).
+---
+- **student_id** *(type: integer)*
+---
+- **dob** *(type: date)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+- **section** *(type: text)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+Here are my responses:
+
+1. Keywords: Student, Education, Enrollment
+2. No relevant relationships mentioned (Foreign Keys).
+3. Business Purpose: Tracking student information for academic purposes.
+---
+**Summary:** This table, `teacher`, stores information about individual teachers, including their unique ID, date of hire, current employment status, name details, and contact email address. It's likely used to manage teacher records and track important data such as hiring dates and active/inactive status.
+---
+- **teacher_id** *(type: integer)*
+---
+- **hire_date** *(type: date)*
+---
+- **active** *(type: boolean)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+1. Teacher, Employee, Education
+2. None (No foreign key constraints)
+3. The teacher table stores information about individual teachers employed at an institution, including their identification, employment history, account status, and contact details.
+---
+**Summary:** This `class` table likely contains information about educational classes or sessions, such as the teacher assigned to each class, the date and time it was created, and details about the class itself (code, name, and description). Think of it like a catalog of all the classes being offered.
+---
+- **class_id** *(type: integer)*
+---
+- **teacher_id** *(type: integer)*
+---
+- **created_at** *(type: timestamp with time zone)*
+---
+- **code** *(type: text)*
+---
+- **name** *(type: text)*
+---
+- **description** *(type: text)*
+---
+Here is the response:
+
+Keywords:
+class, education, teacher, date, description
+
+Relationships:
+- class_id → itself (primary key), 
+- teacher_id → teacher.teacher_id (foreign key)
+
+Business Purpose:
+Track and manage classes within an educational system.
+
+User Question:
+Find students who are not enrolled in any class currently.
+
+Return only the SQL code, nothing else.
+
+
+--- LLM Response ---
+SELECT student_id
+FROM enrollment
+WHERE active = TRUE AND enrollment_id NOT IN (
+  SELECT enrollment_id 
+  FROM enrollment 
+  WHERE class_id IS NOT NULL
+);
+================================================================================
+[2025-07-10 10:51:38.705948] SUCCESS
+User Question: What is the average score achieved in each class?
+
+--- Prompt Sent to LLM ---
+
+You are an expert database analyst. Given the schema below and the user's question, generate a correct SQL query.
+
+Use only table and column names that appear *exactly* in the schema context.
+
+Schema Context:
+**Summary:** This `enrollment` table appears to store information about students' participation in classes. Each row represents a student's enrollment in a specific class, including the date they started and whether their enrollment is currently active or not.
+---
+- **enrollment_id** *(type: integer)*
+---
+- **student_id** *(type: integer)*
+---
+- **class_id** *(type: integer)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Enrollment
+2. Student
+3. Course
+4. Program
+5. Education
+
+Relationships:
+- enrollment_id → student.student_id (Foreign Key)
+- class_id → class.class_id (Foreign Key)
+
+Business Purpose:
+Student and course enrollment tracking.
+---
+**Summary:** This table, `marks`, appears to contain information about the grades or scores given to students in a course or program. Each row represents an individual student's score on a particular assessment, with columns storing details such as the ID of the enrollment, the actual score achieved, the maximum possible score, and when the grade was recorded.
+---
+- **mark_id** *(type: integer)*
+---
+- **enrollment_id** *(type: integer)*
+---
+- **score** *(type: integer)*
+---
+- **max_score** *(type: integer)*
+---
+- **graded_at** *(type: timestamp with time zone)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Grades
+2. Enrollment
+3. Assessment
+4. Education
+
+Relationships:
+- mark_id → marks (primary key)
+- enrollment_id → enrollment.enrollment_id (foreign key)
+
+Business Purpose:
+Student grade tracking and assessment management.
+---
+**Summary:** This table appears to contain information about individual students in a educational institution or program. Each row represents a single student, with columns providing details such as their identification number, birthdate, enrollment date, and current status (active or inactive).
+---
+- **student_id** *(type: integer)*
+---
+- **dob** *(type: date)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+- **section** *(type: text)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+Here are my responses:
+
+1. Keywords: Student, Education, Enrollment
+2. No relevant relationships mentioned (Foreign Keys).
+3. Business Purpose: Tracking student information for academic purposes.
+---
+**Summary:** This table, `teacher`, stores information about individual teachers, including their unique ID, date of hire, current employment status, name details, and contact email address. It's likely used to manage teacher records and track important data such as hiring dates and active/inactive status.
+---
+- **teacher_id** *(type: integer)*
+---
+- **hire_date** *(type: date)*
+---
+- **active** *(type: boolean)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+1. Teacher, Employee, Education
+2. None (No foreign key constraints)
+3. The teacher table stores information about individual teachers employed at an institution, including their identification, employment history, account status, and contact details.
+---
+**Summary:** This `class` table likely contains information about educational classes or sessions, such as the teacher assigned to each class, the date and time it was created, and details about the class itself (code, name, and description). Think of it like a catalog of all the classes being offered.
+---
+- **class_id** *(type: integer)*
+---
+- **teacher_id** *(type: integer)*
+---
+- **created_at** *(type: timestamp with time zone)*
+---
+- **code** *(type: text)*
+---
+- **name** *(type: text)*
+---
+- **description** *(type: text)*
+---
+Here is the response:
+
+Keywords:
+class, education, teacher, date, description
+
+Relationships:
+- class_id → itself (primary key), 
+- teacher_id → teacher.teacher_id (foreign key)
+
+Business Purpose:
+Track and manage classes within an educational system.
+
+User Question:
+What is the average score achieved in each class?
+
+Return only the SQL code, nothing else.
+
+
+--- LLM Response ---
+SELECT c.name, AVG(m.score) AS avg_score
+FROM marks m
+JOIN enrollment e ON m.enrollment_id = e.enrollment_id
+JOIN class c ON e.class_id = c.class_id
+GROUP BY c.name;
+================================================================================
+[2025-07-10 10:52:25.321467] SUCCESS
+User Question: Retrieve all subjects and the number of students enrolled in each.
+
+--- Prompt Sent to LLM ---
+
+You are an expert database analyst. Given the schema below and the user's question, generate a correct SQL query.
+
+Use only table and column names that appear *exactly* in the schema context.
+
+Schema Context:
+**Summary:** This `enrollment` table appears to store information about students' participation in classes. Each row represents a student's enrollment in a specific class, including the date they started and whether their enrollment is currently active or not.
+---
+- **enrollment_id** *(type: integer)*
+---
+- **student_id** *(type: integer)*
+---
+- **class_id** *(type: integer)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Enrollment
+2. Student
+3. Course
+4. Program
+5. Education
+
+Relationships:
+- enrollment_id → student.student_id (Foreign Key)
+- class_id → class.class_id (Foreign Key)
+
+Business Purpose:
+Student and course enrollment tracking.
+---
+**Summary:** This table, `marks`, appears to contain information about the grades or scores given to students in a course or program. Each row represents an individual student's score on a particular assessment, with columns storing details such as the ID of the enrollment, the actual score achieved, the maximum possible score, and when the grade was recorded.
+---
+- **mark_id** *(type: integer)*
+---
+- **enrollment_id** *(type: integer)*
+---
+- **score** *(type: integer)*
+---
+- **max_score** *(type: integer)*
+---
+- **graded_at** *(type: timestamp with time zone)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Grades
+2. Enrollment
+3. Assessment
+4. Education
+
+Relationships:
+- mark_id → marks (primary key)
+- enrollment_id → enrollment.enrollment_id (foreign key)
+
+Business Purpose:
+Student grade tracking and assessment management.
+---
+**Summary:** This table appears to contain information about individual students in a educational institution or program. Each row represents a single student, with columns providing details such as their identification number, birthdate, enrollment date, and current status (active or inactive).
+---
+- **student_id** *(type: integer)*
+---
+- **dob** *(type: date)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+- **section** *(type: text)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+Here are my responses:
+
+1. Keywords: Student, Education, Enrollment
+2. No relevant relationships mentioned (Foreign Keys).
+3. Business Purpose: Tracking student information for academic purposes.
+---
+**Summary:** This table, `teacher`, stores information about individual teachers, including their unique ID, date of hire, current employment status, name details, and contact email address. It's likely used to manage teacher records and track important data such as hiring dates and active/inactive status.
+---
+- **teacher_id** *(type: integer)*
+---
+- **hire_date** *(type: date)*
+---
+- **active** *(type: boolean)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+1. Teacher, Employee, Education
+2. None (No foreign key constraints)
+3. The teacher table stores information about individual teachers employed at an institution, including their identification, employment history, account status, and contact details.
+---
+**Summary:** This `class` table likely contains information about educational classes or sessions, such as the teacher assigned to each class, the date and time it was created, and details about the class itself (code, name, and description). Think of it like a catalog of all the classes being offered.
+---
+- **class_id** *(type: integer)*
+---
+- **teacher_id** *(type: integer)*
+---
+- **created_at** *(type: timestamp with time zone)*
+---
+- **code** *(type: text)*
+---
+- **name** *(type: text)*
+---
+- **description** *(type: text)*
+---
+Here is the response:
+
+Keywords:
+class, education, teacher, date, description
+
+Relationships:
+- class_id → itself (primary key), 
+- teacher_id → teacher.teacher_id (foreign key)
+
+Business Purpose:
+Track and manage classes within an educational system.
+
+User Question:
+Retrieve all subjects and the number of students enrolled in each.
+
+Return only the SQL code, nothing else.
+
+
+--- LLM Response ---
+SELECT c.name AS subject, COUNT(e.student_id) AS num_students
+FROM class c
+JOIN enrollment e ON e.class_id = c.class_id
+GROUP BY c.name;
+================================================================================
+[2025-07-10 13:58:53.691149] SUCCESS
+User Question: How many teachers were hired before 2016?
+
+--- Prompt Sent to LLM ---
+
+You are an expert database analyst. Given the schema below and the user's question, generate a correct SQL query.
+
+Use only table and column names that appear *exactly* in the schema context.
+
+Schema Context:
+**Summary:** This `enrollment` table appears to store information about students' participation in classes. Each row represents a student's enrollment in a specific class, including the date they started and whether their enrollment is currently active or not.
+---
+- **enrollment_id** *(type: integer)*
+---
+- **student_id** *(type: integer)*
+---
+- **class_id** *(type: integer)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Enrollment
+2. Student
+3. Course
+4. Program
+5. Education
+
+Relationships:
+- enrollment_id → student.student_id (Foreign Key)
+- class_id → class.class_id (Foreign Key)
+
+Business Purpose:
+Student and course enrollment tracking.
+---
+**Summary:** This table, `marks`, appears to contain information about the grades or scores given to students in a course or program. Each row represents an individual student's score on a particular assessment, with columns storing details such as the ID of the enrollment, the actual score achieved, the maximum possible score, and when the grade was recorded.
+---
+- **mark_id** *(type: integer)*
+---
+- **enrollment_id** *(type: integer)*
+---
+- **score** *(type: integer)*
+---
+- **max_score** *(type: integer)*
+---
+- **graded_at** *(type: timestamp with time zone)*
+---
+Here is the information you requested:
+
+Keywords:
+1. Grades
+2. Enrollment
+3. Assessment
+4. Education
+
+Relationships:
+- mark_id → marks (primary key)
+- enrollment_id → enrollment.enrollment_id (foreign key)
+
+Business Purpose:
+Student grade tracking and assessment management.
+---
+**Summary:** This table appears to contain information about individual students in a educational institution or program. Each row represents a single student, with columns providing details such as their identification number, birthdate, enrollment date, and current status (active or inactive).
+---
+- **student_id** *(type: integer)*
+---
+- **dob** *(type: date)*
+---
+- **enrolled_at** *(type: timestamp with time zone)*
+---
+- **active** *(type: boolean)*
+---
+- **section** *(type: text)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+Here are my responses:
+
+1. Keywords: Student, Education, Enrollment
+2. No relevant relationships mentioned (Foreign Keys).
+3. Business Purpose: Tracking student information for academic purposes.
+---
+**Summary:** This table, `teacher`, stores information about individual teachers, including their unique ID, date of hire, current employment status, name details, and contact email address. It's likely used to manage teacher records and track important data such as hiring dates and active/inactive status.
+---
+- **teacher_id** *(type: integer)*
+---
+- **hire_date** *(type: date)*
+---
+- **active** *(type: boolean)*
+---
+- **first_name** *(type: text)*
+---
+- **last_name** *(type: text)*
+---
+- **email** *(type: text)*
+---
+1. Teacher, Employee, Education
+2. None (No foreign key constraints)
+3. The teacher table stores information about individual teachers employed at an institution, including their identification, employment history, account status, and contact details.
+---
+**Summary:** This `class` table likely contains information about educational classes or sessions, such as the teacher assigned to each class, the date and time it was created, and details about the class itself (code, name, and description). Think of it like a catalog of all the classes being offered.
+---
+- **class_id** *(type: integer)*
+---
+- **teacher_id** *(type: integer)*
+---
+- **created_at** *(type: timestamp with time zone)*
+---
+- **code** *(type: text)*
+---
+- **name** *(type: text)*
+---
+- **description** *(type: text)*
+---
+Here is the response:
+
+Keywords:
+class, education, teacher, date, description
+
+Relationships:
+- class_id → itself (primary key), 
+- teacher_id → teacher.teacher_id (foreign key)
+
+Business Purpose:
+Track and manage classes within an educational system.
+
+User Question:
+How many teachers were hired before 2016?
+
+Return only the SQL code, nothing else.
+
+
+--- LLM Response ---
+SELECT COUNT(DISTINCT teacher_id) 
+FROM teacher 
+WHERE hire_date < '2016-01-01'::date;
+================================================================================

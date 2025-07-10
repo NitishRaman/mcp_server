@@ -295,14 +295,6 @@ def render_supabase_streamlit_ui(dataset_name, conn, schema_dict, tables):
         st.image(png_path + ".png", caption="📌 Supabase ER Diagram")
 
     
-    # 📦 Build SQLite database from CSVs + schema
-    if st.button("🗃️ Build SQLite DB from CSVs"):
-        try:
-            db_path = save_dataset_to_sqlite_with_schema(dataset_name)
-            st.session_state["db_path"] = db_path  # ✅ save for later
-            st.success(f"✅ SQLite database saved at: {db_path}")
-        except Exception as e:
-            st.error(f"❌ Failed to create SQLite DB: {e}")
     
     # Button to generate and show ER diagram
     pdf_path = os.path.join(folder, f"{dataset_name}_schema.pdf")

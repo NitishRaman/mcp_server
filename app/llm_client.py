@@ -31,7 +31,7 @@ class LLMClient:
     def __init__(self):
         self.backend = LLM_BACKEND
         self.model_name = LLM_MODEL
-        self.api_key = os.getenv("OPENAI_API_KEY")  # Securely load OpenAI API key from env var
+        self.api_key = os.getenv("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")  # Securely load OpenAI API key from env var
 
         if self.backend == "gpt4all":
             self.model = GPT4All(self.model_name)
